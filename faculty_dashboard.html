@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faculty Dashboard - SIET</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0EA5E9;
+            --primary-dark: #0284C7;
+            --primary-light: #38BDF8;
+            --accent: #7C3AED;
+            --danger: #EF4444;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --bg-dark: #0F172A;
+            --bg-card: #1E293B;
+            --bg-card-hover: #334155;
+            --sidebar-bg: linear-gradient(180deg, #0C4A6E 0%, #0369A1 100%);
+            --text-primary: #F1F5F9;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+        }
+
+        .header-text h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .header-text p {
+            font-size: 12px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .user-details span {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .user-details small {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: var(--sidebar-bg);
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .sidebar-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+            padding-left: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            background: transparent;
+            border: none;
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            position: relative;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(124, 58, 237, 0.1));
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .nav-btn.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 60%;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+            border-radius: 0 4px 4px 0;
+        }
+
+        .nav-icon {
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .logout-section {
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+        }
+
+        .logout-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 12px;
+            color: var(--danger);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .logout-btn:hover {
+            background: rgba(239, 68, 68, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+            background: var(--bg-dark);
+        }
+
+        .content-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Welcome Card */
+        .welcome-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(14, 165, 233, 0.1) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 24px;
+        }
+
+        .welcome-card h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .welcome-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .section-card h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Loading State */
+        .loading-spinner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 80px;
+                padding: 16px 8px;
+            }
+
+            .sidebar-title,
+            .nav-btn span,
+            .logout-btn span {
+                display: none;
+            }
+
+            .nav-btn,
+            .logout-btn {
+                justify-content: center;
+                padding: 14px;
+            }
+
+            .nav-icon {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Auth Check -->
+    <script src="js/auth.js"></script>
+    <script>
+        // Protect this page - only Faculty can access
+        if (!Auth.requireAuth(['faculty'])) {
+            document.body.innerHTML = '';
+        }
+    </script>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <img src="assets/images/sietk-logo.png" alt="SIET Logo" onerror="this.src='sietk-logo.png'">
+                <div class="header-text">
+                    <h1>SIET - MCA Department</h1>
+                    <p>Faculty Dashboard</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <div class="user-avatar">F</div>
+                    <div class="user-details">
+                        <span>Faculty Member</span>
+                        <small>Instructor</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-title">Menu</div>
+            <nav class="nav-links">
+                <button class="nav-btn active" onclick="showSection('welcome', this)">
+                    <span class="nav-icon">🏠</span>
+                    <span>Home</span>
+                </button>
+                <button class="nav-btn" onclick="showSection('profile', this)">
+                    <span class="nav-icon">👤</span>
+                    <span>Profile</span>
+                </button>
+                <button class="nav-btn" onclick="showSection('subjects', this)">
+                    <span class="nav-icon">📚</span>
+                    <span>My Subjects</span>
+                </button>
+                <button class="nav-btn" onclick="showSection('bank', this)">
+                    <span class="nav-icon">📝</span>
+                    <span>Question Bank</span>
+                </button>
+                <button class="nav-btn" onclick="showSection('papers', this)">
+                    <span class="nav-icon">🎯</span>
+                    <span>Generate Papers</span>
+                </button>
+            </nav>
+
+            <div class="logout-section">
+                <button class="logout-btn" onclick="Auth.logout()">
+                    <span class="nav-icon">🚪</span>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content-area">
+            <div class="content-wrapper" id="content-area">
+                <!-- Default Welcome Content -->
+                <div class="welcome-card">
+                    <h2>Welcome, Faculty!</h2>
+                    <p>
+                        Manage your teaching operations from this dashboard. You can view your assigned subjects,
+                        upload questions to the question bank, generate unique question paper sets, and access
+                        resources — all in one place!
+                    </p>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script>
+        function showSection(section, btn) {
+            const content = document.getElementById("content-area");
+
+            // Remove "active" from all nav buttons
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            // Section content mapping
+            const sections = {
+                welcome: `
+          <div class="welcome-card">
+            <h2>Welcome, Faculty!</h2>
+            <p>
+              Manage your teaching operations from this dashboard. You can view your assigned subjects, 
+              upload questions to the question bank, generate unique question paper sets, and access 
+              resources — all in one place!
+            </p>
+          </div>
+        `,
+                profile: `
+          <div class="section-card">
+            <h2>👤 My Profile</h2>
+            <p>View and update your personal details, contact information, and qualifications. Keep your profile up-to-date for accurate records.</p>
+          </div>
+        `,
+                subjects: `
+          <div class="section-card">
+            <h2>📚 My Subjects</h2>
+            <p>View the list of subjects assigned to you for the current semester. Access syllabus details, unit breakdowns, and related materials.</p>
+          </div>
+        `,
+                bank: `
+          <div class="section-card">
+            <h2>📝 Question Bank</h2>
+            <p>Upload, organize, and manage questions for your subjects. Build a comprehensive question repository organized by units and difficulty levels.</p>
+          </div>
+        `,
+                papers: `
+          <div class="section-card">
+            <h2>🎯 Generate Question Papers</h2>
+            <p>Create multiple unique question paper sets from your question bank. The system automatically generates varied papers while maintaining coverage of all units.</p>
+          </div>
+        `
+            };
+
+            content.innerHTML = sections[section] || sections.welcome;
+        }
+    </script>
+
+</body>
+
+</html>

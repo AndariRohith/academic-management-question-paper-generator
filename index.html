@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIET - Question Bank Management System</title>
+    <style>
+        body {
+            margin: 0;
+            background: #0F172A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 4px solid rgba(124, 58, 237, 0.2);
+            border-top-color: #7C3AED;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader"></div>
+
+    <script src="js/auth.js"></script>
+    <script>
+        // Entry point - redirect based on authentication status
+        if (Auth.isAuthenticated()) {
+            Auth.redirectToDashboard();
+        } else {
+            window.location.replace('login.html');
+        }
+    </script>
+</body>
+
+</html>

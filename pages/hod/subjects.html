@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manage Subjects - HOD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7C3AED;
+      --primary-dark: #5B21B6;
+      --accent: #0EA5E9;
+      --success: #10B981;
+      --danger: #EF4444;
+      --warning: #F59E0B;
+      --bg-dark: #0F172A;
+      --bg-card: #1E293B;
+      --bg-card-hover: #334155;
+      --text-primary: #F1F5F9;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: transparent;
+      color: var(--text-primary);
+    }
+
+    .page-header {
+      margin-bottom: 24px;
+    }
+
+    .page-header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .page-header p {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    /* Mode Buttons */
+    .modes {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+      color: var(--text-primary);
+    }
+
+    .btn-danger {
+      background: linear-gradient(135deg, var(--danger), #DC2626);
+      color: white;
+    }
+
+    .btn-danger:hover {
+      box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+    }
+
+    .btn-success {
+      background: linear-gradient(135deg, var(--success), #059669);
+      color: white;
+    }
+
+    .btn-sm {
+      padding: 8px 14px;
+      font-size: 12px;
+      border-radius: 8px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Form */
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: var(--text-primary);
+      font-size: 14px;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+    }
+
+    .form-group input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .notice {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+    }
+
+    thead {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    }
+
+    th {
+      padding: 14px 12px;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: white;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border-color);
+      transition: background 0.2s ease;
+    }
+
+    tbody tr:hover {
+      background: var(--bg-card-hover);
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    td {
+      padding: 14px 12px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    td:first-child {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    td:nth-child(2) {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .modal {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 28px;
+      border-radius: 20px;
+      width: 420px;
+      max-width: 95%;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      animation: modalIn 0.3s ease;
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .modal h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .modal .form-group {
+      margin-bottom: 16px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page-header">
+    <h1>📚 Subject Management</h1>
+    <p>Add, update, and manage course subjects across regulations</p>
+  </div>
+
+  <div class="modes">
+    <button class="btn btn-primary" id="mode-add" type="button">➕ Add Subject</button>
+    <button class="btn btn-primary" id="mode-update" type="button">✏️ Update Subject</button>
+    <button class="btn btn-danger" id="mode-delete" type="button">🗑️ Remove Subject</button>
+    <button class="btn btn-secondary" id="btn-view" type="button">📄 View Subjects</button>
+  </div>
+
+  <!-- ADD / UPDATE FORM -->
+  <div class="card" id="add-form-card" style="display:none;">
+    <h3 id="form-title">➕ Add New Subject</h3>
+    <form id="add-subject-form" onsubmit="return false;">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Subject ID</label>
+          <input id="subject_id" type="text" placeholder="e.g. S101">
+        </div>
+        <div class="form-group">
+          <label>Subject Code</label>
+          <input id="subject_code" type="text" placeholder="e.g. MCA101">
+        </div>
+        <div class="form-group">
+          <label>Subject Name</label>
+          <input id="subject_name" type="text" placeholder="e.g. Data Structures">
+        </div>
+        <div class="form-group">
+          <label>Regulation</label>
+          <select id="regulation">
+            <option value="">-- Select --</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Semester</label>
+          <select id="semester">
+            <option value="">-- Select --</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Faculty Assigned</label>
+          <input id="faculty_assign" type="text" placeholder="Faculty Name">
+        </div>
+        <div class="form-group">
+          <label>Credits</label>
+          <input id="credits" type="number" min="0" step="0.5" placeholder="e.g. 4">
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-secondary" id="btn-cancel-form" type="button">Cancel</button>
+        <button class="btn btn-secondary" id="btn-reset" type="button">Reset</button>
+        <button class="btn btn-success" id="form-submit" type="button">💾 Save Subject</button>
+      </div>
+      <p class="notice">Use "View Subjects" to see all entries.</p>
+    </form>
+  </div>
+
+  <!-- DELETE CARD -->
+  <div class="card" id="delete-card" style="display:none;">
+    <h3>🗑️ Remove Subject</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Subject ID</label>
+        <input id="del_subject_id" type="text" placeholder="Enter Subject ID">
+      </div>
+      <div class="form-group">
+        <label>Subject Code</label>
+        <input id="del_subject_code" type="text" placeholder="Enter Code (optional)">
+      </div>
+      <div class="form-group">
+        <label>Subject Name</label>
+        <input id="del_subject_name" type="text" placeholder="Enter Name (optional)">
+      </div>
+      <div class="form-group">
+        <label>Regulation</label>
+        <select id="del_regulation">
+          <option value="">-- Select --</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Semester</label>
+        <select id="del_semester">
+          <option value="">-- Optional --</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-secondary" id="btn-cancel-delete" type="button">Cancel</button>
+      <button class="btn btn-danger" id="btn-delete-submit" type="button">🗑️ Delete</button>
+    </div>
+  </div>
+
+  <!-- RESULTS TABLE -->
+  <div class="card" id="results-card" style="display:none;">
+    <h3>📄 All Subjects</h3>
+    <div class="table-wrap">
+      <table id="subjects-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Regulation</th>
+            <th>Semester</th>
+            <th>Faculty</th>
+            <th>Credits</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FILTER MODAL -->
+  <div id="semester-modal" class="modal-backdrop" style="display:none;">
+    <div class="modal">
+      <h3>🔍 Select Filters</h3>
+      <div class="form-group">
+        <label>Regulation</label>
+        <select id="pick_regulation"></select>
+      </div>
+      <div class="form-group">
+        <label>Semester</label>
+        <select id="pick_semester">
+          <option value="All">All Semesters</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+        </select>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" type="button" onclick="window.closeSemesterModal()">Cancel</button>
+        <button class="btn btn-primary" type="button" onclick="window.viewBySemester()">Apply Filters</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Initializer -->
+  <script>
+    if (window.initSubjectManagement) {
+      initSubjectManagement();
+    }
+  </script>
+
+</body>
+
+</html>

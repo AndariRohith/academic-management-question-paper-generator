@@ -1,0 +1,358 @@
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Background Orbs */
+.bg-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: #7C3AED;
+  top: -100px;
+  left: -100px;
+}
+
+.orb-2 {
+  width: 300px;
+  height: 300px;
+  background: #0EA5E9;
+  bottom: -80px;
+  right: -80px;
+  animation-delay: 2s;
+}
+
+.orb-3 {
+  width: 250px;
+  height: 250px;
+  background: #EC4899;
+  top: 50%;
+  left: 70%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+}
+
+/* Header */
+.header {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  z-index: 10;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.header .logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.header-text {
+  text-align: center;
+}
+
+.header-text h1 {
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: 800;
+  color: #F3F4F6;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.header-text h2 {
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 600;
+  color: #0EA5E9;
+  margin-top: 4px;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  z-index: 10;
+}
+
+.department-badge {
+  background: linear-gradient(135deg, #7C3AED, #0EA5E9);
+  color: white;
+  padding: 10px 28px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+}
+
+/* Flip Card */
+.flip-container {
+  perspective: 1200px;
+  width: 380px;
+  height: 450px;
+}
+
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flip-container.flipped .flipper {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Card Header */
+.card-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.card-header .icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 28px;
+}
+
+.hod-icon {
+  background: linear-gradient(135deg, #7C3AED, #5B21B6);
+}
+
+.faculty-icon {
+  background: linear-gradient(135deg, #0EA5E9, #0284C7);
+}
+
+.card-header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #F3F4F6;
+}
+
+.card-header p {
+  font-size: 13px;
+  color: #9CA3AF;
+  margin-top: 5px;
+}
+
+/* Form */
+.login-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 16px;
+  padding-right: 45px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 15px;
+  color: #F3F4F6;
+  transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+  color: #9CA3AF;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #7C3AED;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+.card-back .input-group input:focus {
+  border-color: #0EA5E9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9CA3AF;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.toggle-password:hover {
+  color: #F3F4F6;
+}
+
+.btn-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit-hod {
+  background: linear-gradient(135deg, #7C3AED, #5B21B6);
+  color: white;
+}
+
+.btn-submit-hod:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+}
+
+.btn-submit-faculty {
+  background: linear-gradient(135deg, #0EA5E9, #0284C7);
+  color: white;
+}
+
+.btn-submit-faculty:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+}
+
+.btn-clear {
+  background: rgba(255, 255, 255, 0.08);
+  color: #9CA3AF;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-clear:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #EF4444;
+  border-color: #EF4444;
+}
+
+/* Switch Link */
+.switch-link {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.switch-link span {
+  color: #9CA3AF;
+  font-size: 13px;
+}
+
+.switch-link a {
+  color: #0EA5E9;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card-back .switch-link a {
+  color: #7C3AED;
+}
+
+.switch-link a:hover {
+  text-decoration: underline;
+}
+
+/* Error Message */
+.error-message {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #FCA5A5;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 10px;
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  .flip-container {
+    width: 100%;
+    max-width: 360px;
+  }
+}

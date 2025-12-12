@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIET Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-hod: #7C3AED;
+      --primary-hod-dark: #5B21B6;
+      --primary-faculty: #0EA5E9;
+      --primary-faculty-dark: #0284C7;
+      --danger: #EF4444;
+      --danger-dark: #DC2626;
+      --bg-gradient-start: #0f0c29;
+      --bg-gradient-mid: #302b63;
+      --bg-gradient-end: #24243e;
+      --card-bg: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 255, 255, 0.15);
+      --text-light: #F3F4F6;
+      --text-muted: #9CA3AF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-mid), var(--bg-gradient-end));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow-x: hidden;
+    }
+
+    /* Animated background orbs */
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      z-index: 0;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .orb-1 {
+      width: 400px;
+      height: 400px;
+      background: var(--primary-hod);
+      top: -100px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      width: 300px;
+      height: 300px;
+      background: var(--primary-faculty);
+      bottom: -80px;
+      right: -80px;
+      animation-delay: 2s;
+    }
+
+    .orb-3 {
+      width: 250px;
+      height: 250px;
+      background: #EC4899;
+      top: 50%;
+      left: 70%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-30px) scale(1.05);
+      }
+    }
+
+    /* Header */
+    .header {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 20px;
+      z-index: 10;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .header img {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-text {
+      text-align: center;
+    }
+
+    .header-text h1 {
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 800;
+      color: var(--text-light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .header-text h2 {
+      font-size: clamp(14px, 2vw, 18px);
+      font-weight: 600;
+      color: var(--primary-faculty);
+      margin-top: 4px;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      z-index: 10;
+    }
+
+    .department-badge {
+      background: linear-gradient(135deg, var(--primary-hod), var(--primary-faculty));
+      color: white;
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+    }
+
+    /* Flip Card Container */
+    .flip-container {
+      perspective: 1200px;
+      width: 380px;
+      height: 450px;
+    }
+
+    .flipper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .flip-container.flipped .flipper {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-front {
+      z-index: 2;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Card Header */
+    .card-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .card-header .icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 28px;
+    }
+
+    .card-front .icon {
+      background: linear-gradient(135deg, var(--primary-hod), var(--primary-hod-dark));
+    }
+
+    .card-back .icon {
+      background: linear-gradient(135deg, var(--primary-faculty), var(--primary-faculty-dark));
+    }
+
+    .card-header h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+
+    .card-header p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
+    /* Form */
+    .login-form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .input-group {
+      position: relative;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 16px;
+      padding-right: 45px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      font-size: 15px;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+    }
+
+    .input-group input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: var(--primary-hod);
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+    }
+
+    .card-back .input-group input:focus {
+      border-color: var(--primary-faculty);
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 18px;
+      transition: color 0.2s;
+    }
+
+    .toggle-password:hover {
+      color: var(--text-light);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-submit-hod {
+      background: linear-gradient(135deg, var(--primary-hod), var(--primary-hod-dark));
+      color: white;
+    }
+
+    .btn-submit-hod:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+    }
+
+    .btn-submit-faculty {
+      background: linear-gradient(135deg, var(--primary-faculty), var(--primary-faculty-dark));
+      color: white;
+    }
+
+    .btn-submit-faculty:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+    }
+
+    .btn-clear {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-clear:hover {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--danger);
+      border-color: var(--danger);
+    }
+
+    /* Switch Link */
+    .switch-link {
+      text-align: center;
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .switch-link span {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .switch-link a {
+      color: var(--primary-faculty);
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .card-front .switch-link a {
+      color: var(--primary-faculty);
+    }
+
+    .card-back .switch-link a {
+      color: var(--primary-hod);
+    }
+
+    .switch-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Error message */
+    .error-message {
+      display: none;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #FCA5A5;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .error-message.show {
+      display: block;
+      animation: shake 0.5s ease;
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-5px);
+      }
+
+      75% {
+        transform: translateX(5px);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 420px) {
+      .flip-container {
+        width: 100%;
+        max-width: 360px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Orbs -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <img src="assets/images/sietk-logo.png" alt="SIET Logo" onerror="this.src='sietk-logo.png'">
+      <div class="header-text">
+        <h1>Siddharth Institute of Engineering & Technology</h1>
+        <h2>(Autonomous)</h2>
+      </div>
+      <img src="assets/images/sietk-logo.png" alt="SIET Logo" onerror="this.src='sietk-logo.png'">
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="department-badge">Master of Computer Application</div>
+
+    <div class="flip-container" id="flipContainer">
+      <div class="flipper">
+
+        <!-- Front: HOD Login -->
+        <div class="card-face card-front">
+          <div class="card-header">
+            <div class="icon">👨‍💼</div>
+            <h3>HOD Login</h3>
+            <p>Access your administrative dashboard</p>
+          </div>
+
+          <div class="error-message" id="hodError">Invalid credentials. Please try again.</div>
+
+          <form class="login-form" onsubmit="return loginHOD(event)">
+            <div class="input-group">
+              <input type="text" id="hodUser" placeholder="User ID" required autocomplete="username">
+            </div>
+            <div class="input-group">
+              <input type="password" id="hodPass" placeholder="Password" required autocomplete="current-password">
+              <button type="button" class="toggle-password" onclick="togglePassword('hodPass', this)">👁️</button>
+            </div>
+            <div class="btn-group">
+              <button type="submit" class="btn btn-submit-hod">Sign In</button>
+              <button type="reset" class="btn btn-clear">Clear</button>
+            </div>
+          </form>
+
+          <div class="switch-link">
+            <span>Faculty member? </span>
+            <a onclick="flipCard()">Login here →</a>
+          </div>
+        </div>
+
+        <!-- Back: Faculty Login -->
+        <div class="card-face card-back">
+          <div class="card-header">
+            <div class="icon">👨‍🏫</div>
+            <h3>Faculty Login</h3>
+            <p>Access your teaching dashboard</p>
+          </div>
+
+          <div class="error-message" id="facultyError">Invalid credentials. Please try again.</div>
+
+          <form class="login-form" onsubmit="return loginFaculty(event)">
+            <div class="input-group">
+              <input type="text" id="facultyUser" placeholder="User ID" required autocomplete="username">
+            </div>
+            <div class="input-group">
+              <input type="password" id="facultyPass" placeholder="Password" required autocomplete="current-password">
+              <button type="button" class="toggle-password" onclick="togglePassword('facultyPass', this)">👁️</button>
+            </div>
+            <div class="btn-group">
+              <button type="submit" class="btn btn-submit-faculty">Sign In</button>
+              <button type="reset" class="btn btn-clear">Clear</button>
+            </div>
+          </form>
+
+          <div class="switch-link">
+            <span>HOD? </span>
+            <a onclick="flipCard()">← Login here</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script>
+    // Redirect if already logged in
+    if (Auth.isAuthenticated()) {
+      Auth.redirectToDashboard();
+    }
+
+    // Demo credentials (in production, validate against backend)
+    const hodCredentials = { username: "hod", password: "hod123" };
+    const facultyCredentials = { username: "faculty", password: "faculty123" };
+
+    function flipCard() {
+      document.getElementById('flipContainer').classList.toggle('flipped');
+      // Hide error messages when flipping
+      document.getElementById('hodError').classList.remove('show');
+      document.getElementById('facultyError').classList.remove('show');
+    }
+
+    function togglePassword(inputId, btn) {
+      const input = document.getElementById(inputId);
+      if (input.type === "password") {
+        input.type = "text";
+        btn.textContent = "🙈";
+      } else {
+        input.type = "password";
+        btn.textContent = "👁️";
+      }
+    }
+
+    function loginHOD(event) {
+      event.preventDefault();
+      const user = document.getElementById("hodUser").value.trim();
+      const pass = document.getElementById("hodPass").value.trim();
+
+      if (user === hodCredentials.username && pass === hodCredentials.password) {
+        Auth.login('hod', user);
+        window.location.href = "hod_dashboard.html";
+      } else {
+        document.getElementById('hodError').classList.add('show');
+      }
+      return false;
+    }
+
+    function loginFaculty(event) {
+      event.preventDefault();
+      const user = document.getElementById("facultyUser").value.trim();
+      const pass = document.getElementById("facultyPass").value.trim();
+
+      if (user === facultyCredentials.username && pass === facultyCredentials.password) {
+        Auth.login('faculty', user);
+        window.location.href = "faculty_dashboard.html";
+      } else {
+        document.getElementById('facultyError').classList.add('show');
+      }
+      return false;
+    }
+  </script>
+</body>
+
+</html>

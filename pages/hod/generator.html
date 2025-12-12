@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Question Paper Set Generator</title>
+
+<style>
+    body { font-family: Arial, sans-serif; background:#f3f5f7; padding:20px; }
+    .container { background:white; padding:25px; width:800px; margin:auto; border-radius:10px;
+                 box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+    label { font-weight:600; display:block; margin-top:14px; }
+    select, input[type=file] { width:100%; padding:10px; margin-top:6px; }
+    button { background:#1976d2; border:none; color:white; padding:10px 16px; margin-top:14px;
+             border-radius:6px; cursor:pointer; }
+    #links a { display:block; margin-top:8px; }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Question Paper Set Generator</h2>
+
+    <label>Regulation</label>
+    <select id="regSel">
+        <option value="">-- select regulation --</option>
+    </select>
+
+    <label>Semester</label>
+    <select id="semSel">
+        <option value="">-- select semester --</option>
+    </select>
+
+    <label>Subject</label>
+    <select id="subSel">
+        <option value="">-- select subject --</option>
+    </select>
+
+    <label>Upload Question Bank (PDF)</label>
+    <input type="file" id="qbFile" accept="application/pdf">
+
+    <!-- FIXED BUTTONS -->
+    <button id="uploadBtn" type="button">Upload & Parse</button>
+    <button id="genBtn" type="button" disabled>Generate 4 Sets (PDF)</button>
+
+    <p id="status" style="margin-top:15px; color:#222;"></p>
+    <div id="links"></div>
+</div>
+
+<script src="/static/generator.js"></script>
+
+
+</body>
+</html>

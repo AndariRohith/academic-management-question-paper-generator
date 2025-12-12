@@ -1,0 +1,99 @@
+unit,question_number,question_text,taxonomy_level,course_outcome,marks,has_or
+1,1,"a) Describe various features of a python.  
+b) Explain in brief about the application of python.",1,1,6,False
+1,2,"a) Describe the need of python.  
+b) List out various applications of python.",2,1,4,False
+1,3,List and explain various data types in python. With example.,1,1,12,False
+1,4,"Compare and explain the following operators with an example
+i) Assignment   ii) Membership  iii) Identify",4,1,12,False
+1,5,"a) Describe input -output in python with example.  
+b) Explain indentation with example.",1,1,7,False
+1,6,"a) Choose various operators of Arithmetic and Comparison.  
+b) Design a python program to demonstrate logical operator.",5,1,6,False
+1,7,"a) Explain various conditional statements in python.  
+b) Develop a python program to find largest of two numbers.",2,1,6,False
+1,8,Develop a python program to demonstrate break and continue statements.,4,1,12,False
+1,9,"a) Demonstrate for and while statements in python with example.  
+b) Build a python program to check given number is positive or negative or zero.",2,1,6,False
+1,10,"a) Explain various looping statements in python.  
+b) Develop a python program to display numbers up to given number.",2,1,6,False
+2,1,"a) How can we create and access the list in python.  
+b) Identify various methods to perform on list.",2,2,6,False
+2,2,Compare and explain various data structures in python with examples.,5,2,12,False
+2,3,"a) How can we create and access the tuple in python.  
+b) Identify various methods performed on tuple.",2,2,6,False
+2,4,Classify  various slicing operations on a data structure,4,2,12,False
+2,5,"a) How can we create and access the set in python.  
+b) Identify various methods to perform on set.",2,2,6,False
+2,6,"a) What is a function? Explain how we can create a function.  
+b) Explain different ways to pass arguments in a function. With example",1,2,6,False
+2,7,Distinguish  various  types of  arguments with example program in python .,5,2,12,False
+2,8,"a) Illustrate the fruitful functions in python with example.  
+b) Discuss about Anonymous  functions in python with an example.",3,2,6,False
+2,9,Differentiate and explain local and global variable with an example python program.,4,2,12,False
+2,10,Illustrate modules in python with an example,3,2,12,False
+3,1,"a) How a class and an object can  can create in python.  
+b) Create a Student class and initialize it with name and roll number. Design
+methods for  i) Display to display all the information of the student.
+ii) setAge to set the age of the student.
+iii) setMarks to assign marks to the student.",1,3,4,False
+3,2,Discuss object oriented programming in python with creation of class and object.,2,3,12,False
+3,3,"a) Illustrate class inheritance in Python with an example  
+b) Write a python program to find the area of a cone and circle using inheritance.",2,3,6,False
+3,4,How do we  access parent members in the child class?  Explain with an example.,6,3,12,False
+3,5,"a) Explain encapsulation in python with an example.  
+b) What is init method in python?  Explain with example.",2,3,6,False
+3,6,How does inheritance work in python? Explain it with an example.,2,3,12,False
+3,7,"a) Discuss in detail about polymorphism in python.  
+b) Explain method overriding in python with an example program.",2,3,6,False
+3,8,"a) What is an Error? Explain types of errors.  
+b) Compare and explain  various built -in exception in python.",2,3,6,False
+3,9,Differentiate error and exception with an example program.,4,3,12,False
+3,10,"a) Discuss how we can  raise an exception.  
+b) Write a simple program which illustrates Handling Exceptions.",2,3,6,False
+4,1,"a) What are the various Command Packages  in R?  
+b) How to Get Extra Packages of R Commands ?",1,3,6,False
+4,2,"a) What is R? List the features and applications of R.  
+b) Explain the advantages and disadvantages of R.",1,3,6,False
+4,3,Demonstrate the Help Command in R Language.,2,3,12,False
+4,4,"a) List the functions for reading data into R.  
+b) List the functions for writing data  to files in R.",1,3,6,False
+4,5,Illustrate various Mathematical Operations available in R Language. With example.,3,3,12,False
+4,6,"a) Differentiate between Vector, List, Matrix, and Data frame.  
+b) What is a vector in R? Explain different ways to create a vector.",4,3,4,False
+4,7,"a) Identify different ways to select and display parts of a Vector Object.  
+b) How can we rearrange the items in a vector?",3,3,7,False
+4,8,"a) Calculate Cumulative Sum of a Numeric Object in R Programming  
+b) Construct a list data object with an example in R.",2,3,4,False
+4,9,"a) How do we convert matrix to data frame in R? Explain with example.  
+b) How do we convert data frame into a matrix? Explain with example",3,3,3,False
+4,10,Develop a complicated data object and discuss viewing in that object.,6,3,12,False
+5,1,"a) Categorize Statistic commands that produce a Single Value as a Summary . 
+b) List out Summary of Commands to Add Names to Rows and Columns of Data
+Objects",4,5,6,False
+5,2,"a) Identify  and explain various t -test commands in r.  
+b) Discuss Two -Sample t -Test with Unequal and Equal Variance.",3,5,6,False
+5,3,"a) Why we use Wilcoxon U -Test? Identify the commands in it.  
+b) Discuss Two -Sample and One -Sample in U -Test.",4,5,6,False
+5,4,"Choose the following data2
+> data2",,,,False
+5,3,"5 7 5 3 2 6 8 5 6 9 4 5 7 3 4
+Find the following by using summary statistics commands
+i) Average of the sample
+ii) Largest value in the sample
+iii) Smallest value in the sample
+iv) How many items are in the sample
+v) Look at a different data sample",5,5,12,False
+5,5,"a) Describe various commands of Cumulative measures in R . 
+b) Calculate the cumulative values for the following sample data
+a <- c(1:9,4,2,4,5:2)",2,5,6,False
+5,6,"a) Explain the importance of bar charts with examples . 
+b) Discuss Line charts using numeric data.",5,5,6,False
+5,7,"a) Differentiate Plots and Charts in the Graphical Analysis.  
+b) Draw a pie chart for the following data",4,5,6,False
+5,8,Identify and explain various types of Graphical Data Analysis.,3,5,12,False
+5,9,Explain different ways to copy graphics to other applications.,2,5,12,False
+5,10,"Explain different ways to create several graphs in one window.  
+Prepared  by:
+Mr. J. S. ANANDA KUMAR
+Assistant Professor/ MCA",6,5,12,False

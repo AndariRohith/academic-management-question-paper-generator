@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOD Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7C3AED;
+      --primary-dark: #5B21B6;
+      --accent: #0EA5E9;
+      --success: #10B981;
+      --danger: #EF4444;
+      --bg-dark: #0F172A;
+      --bg-card: #1E293B;
+      --text-primary: #F1F5F9;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: transparent;
+      color: var(--text-primary);
+    }
+
+    .profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      overflow: hidden;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .profile-header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--accent));
+      padding: 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .profile-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      object-fit: cover;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-header h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .profile-header .title {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 500;
+    }
+
+    .profile-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin-top: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+    }
+
+    .profile-body {
+      padding: 32px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px;
+      background: var(--bg-dark);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .info-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .info-content label {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .info-content span {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      background: rgba(124, 58, 237, 0.15);
+      color: var(--primary);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="profile-card">
+    <div class="profile-header">
+      <img src="hod-photo.png" alt="HOD Photo" class="profile-avatar">
+      <h2>Mr. J. S. Ananda Kumar</h2>
+      <p class="title">Associate Professor & HOD (Incharge), MCA</p>
+      <span class="profile-badge">🎓 15+ Years Experience</span>
+    </div>
+
+    <div class="profile-body">
+      <div class="section-title">Personal Information</div>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-icon">👤</div>
+          <div class="info-content">
+            <label>Full Name</label>
+            <span>Mr. J. S. Ananda Kumar</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🎓</div>
+          <div class="info-content">
+            <label>Qualification</label>
+            <span>M.Tech, (Ph.D.)</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">💼</div>
+          <div class="info-content">
+            <label>Experience</label>
+            <span>11 Years Teaching + 4 Years IT Industry</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📧</div>
+          <div class="info-content">
+            <label>Email</label>
+            <span>anandakumar@sietk.org</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📱</div>
+          <div class="info-content">
+            <label>Phone</label>
+            <span>+91-9876543210</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🏛️</div>
+          <div class="info-content">
+            <label>Department</label>
+            <span>Master of Computer Application (MCA)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">Research & Interests</div>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-icon">🔬</div>
+          <div class="info-content">
+            <label>Areas of Interest</label>
+            <span>Data Analytics, Data Science, Query Optimization</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📄</div>
+          <div class="info-content">
+            <label>Publications</label>
+            <span>10+ papers in reputed journals</span>
+          </div>
+        </div>
+        <div class="info-item" style="grid-column: 1 / -1;">
+          <div class="info-icon">🚀</div>
+          <div class="info-content">
+            <label>Current Projects</label>
+            <span>Data Mining Applications in Smart Systems</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">Expertise Tags</div>
+      <div class="research-tags">
+        <span class="tag">Data Analytics</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Query Optimization</span>
+        <span class="tag">Data Science</span>
+        <span class="tag">Smart Systems</span>
+        <span class="tag">Database Management</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

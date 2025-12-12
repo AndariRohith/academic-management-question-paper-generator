@@ -1,0 +1,471 @@
+{
+  "I": [
+    {
+      "text": "a) Describe various features of a python.  \nb) Explain in brief about the application of python.",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "6",
+        "raw": "CO1    L1    6M"
+      }
+    },
+    {
+      "text": "a) Describe the need of python.  \nb) List out various applications of python.",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "4",
+        "raw": "CO1    L2    4M"
+      }
+    },
+    {
+      "text": "List and explain various data types in python. With example.",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L1    12M"
+      }
+    },
+    {
+      "text": "Compare and explain the following operators with an example\ni) Assignment   ii) Membership  iii) Identify",
+      "metadata": {
+        "level": "4",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L4    12M"
+      }
+    },
+    {
+      "text": "a) Describe input -output in python with example.  \nb) Explain indentation with example.",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "7",
+        "raw": "CO1    L1    7M"
+      }
+    },
+    {
+      "text": "a) Choose various operators of Arithmetic and Comparison.  \nb) Design a python program to demonstrate logical operator.",
+      "metadata": {
+        "level": "5",
+        "co": "1",
+        "marks": "6",
+        "raw": "CO1    L5    6M"
+      }
+    },
+    {
+      "text": "a) Explain various conditional statements in python.  \nb) Develop a python program to find largest of two numbers.",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "6",
+        "raw": "CO1    L2    6M"
+      }
+    },
+    {
+      "text": "Develop a python program to demonstrate break and continue statements.",
+      "metadata": {
+        "level": "4",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L4    12M"
+      }
+    },
+    {
+      "text": "a) Demonstrate for and while statements in python with example.  \nb) Build a python program to check given number is positive or negative or zero.",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "6",
+        "raw": "CO1    L2    6M"
+      }
+    },
+    {
+      "text": "a) Explain various looping statements in python.  \nb) Develop a python program to display numbers up to given number.",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "6",
+        "raw": "CO1    L2    6M"
+      }
+    }
+  ],
+  "II": [
+    {
+      "text": "a) How can we create and access the list in python.  \nb) Identify various methods to perform on list.",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "6",
+        "raw": "CO2    L2    6M"
+      }
+    },
+    {
+      "text": "Compare and explain various data structures in python with examples.",
+      "metadata": {
+        "level": "5",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L5    12M"
+      }
+    },
+    {
+      "text": "a) How can we create and access the tuple in python.  \nb) Identify various methods performed on tuple.",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "6",
+        "raw": "CO2    L2    6M"
+      }
+    },
+    {
+      "text": "Classify  various slicing operations on a data structure",
+      "metadata": {
+        "level": "4",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L4    12M"
+      }
+    },
+    {
+      "text": "a) How can we create and access the set in python.  \nb) Identify various methods to perform on set.",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "6",
+        "raw": "CO2    L2    6M"
+      }
+    },
+    {
+      "text": "a) What is a function? Explain how we can create a function.  \nb) Explain different ways to pass arguments in a function. With example",
+      "metadata": {
+        "level": "1",
+        "co": "2",
+        "marks": "6",
+        "raw": "CO2    L1    6M"
+      }
+    },
+    {
+      "text": "Distinguish  various  types of  arguments with example program in python .",
+      "metadata": {
+        "level": "5",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L5    12M"
+      }
+    },
+    {
+      "text": "a) Illustrate the fruitful functions in python with example.  \nb) Discuss about Anonymous  functions in python with an example.",
+      "metadata": {
+        "level": "3",
+        "co": "2",
+        "marks": "6",
+        "raw": "CO2    L3    6M"
+      }
+    },
+    {
+      "text": "Differentiate and explain local and global variable with an example python program.",
+      "metadata": {
+        "level": "4",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L4    12M"
+      }
+    },
+    {
+      "text": "Illustrate modules in python with an example",
+      "metadata": {
+        "level": "3",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L3    12M"
+      }
+    }
+  ],
+  "III": [
+    {
+      "text": "a) How a class and an object can  can create in python.  \nb) Create a Student class and initialize it with name and roll number. Design\nmethods for  i) Display to display all the information of the student.\nii) setAge to set the age of the student.\niii) setMarks to assign marks to the student.",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "4",
+        "raw": "CO3    L1    4M"
+      }
+    },
+    {
+      "text": "Discuss object oriented programming in python with creation of class and object.",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "a) Illustrate class inheritance in Python with an example  \nb) Write a python program to find the area of a cone and circle using inheritance.",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "6",
+        "raw": "CO3    L2    6M"
+      }
+    },
+    {
+      "text": "How do we  access parent members in the child class?  Explain with an example.",
+      "metadata": {
+        "level": "6",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L6    12M"
+      }
+    },
+    {
+      "text": "a) Explain encapsulation in python with an example.  \nb) What is init method in python?  Explain with example.",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "6",
+        "raw": "CO3    L2    6M"
+      }
+    },
+    {
+      "text": "How does inheritance work in python? Explain it with an example.",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "a) Discuss in detail about polymorphism in python.  \nb) Explain method overriding in python with an example program.",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "6",
+        "raw": "CO3    L2    6M"
+      }
+    },
+    {
+      "text": "a) What is an Error? Explain types of errors.  \nb) Compare and explain  various built -in exception in python.",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "6",
+        "raw": "CO3    L2    6M"
+      }
+    },
+    {
+      "text": "Differentiate error and exception with an example program.",
+      "metadata": {
+        "level": "4",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L4    12M"
+      }
+    },
+    {
+      "text": "a) Discuss how we can  raise an exception.  \nb) Write a simple program which illustrates Handling Exceptions.",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "6",
+        "raw": "CO3    L2    6M"
+      }
+    }
+  ],
+  "IV": [
+    {
+      "text": "a) What are the various Command Packages  in R?  \nb) How to Get Extra Packages of R Commands ?",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "6",
+        "raw": "CO3    L1    6M"
+      }
+    },
+    {
+      "text": "a) What is R? List the features and applications of R.  \nb) Explain the advantages and disadvantages of R.",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "6",
+        "raw": "CO3    L1    6M"
+      }
+    },
+    {
+      "text": "Demonstrate the Help Command in R Language.",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "a) List the functions for reading data into R.  \nb) List the functions for writing data  to files in R.",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "6",
+        "raw": "CO3    L1    6M"
+      }
+    },
+    {
+      "text": "Illustrate various Mathematical Operations available in R Language. With example.",
+      "metadata": {
+        "level": "3",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L3    12M"
+      }
+    },
+    {
+      "text": "a) Differentiate between Vector, List, Matrix, and Data frame.  \nb) What is a vector in R? Explain different ways to create a vector.",
+      "metadata": {
+        "level": "4",
+        "co": "3",
+        "marks": "4",
+        "raw": "CO3    L4    4M"
+      }
+    },
+    {
+      "text": "a) Identify different ways to select and display parts of a Vector Object.  \nb) How can we rearrange the items in a vector?",
+      "metadata": {
+        "level": "3",
+        "co": "3",
+        "marks": "7",
+        "raw": "CO3    L3    7M"
+      }
+    },
+    {
+      "text": "a) Calculate Cumulative Sum of a Numeric Object in R Programming  \nb) Construct a list data object with an example in R.",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "4",
+        "raw": "CO3    L2    4M"
+      }
+    },
+    {
+      "text": "a) How do we convert matrix to data frame in R? Explain with example.  \nb) How do we convert data frame into a matrix? Explain with example",
+      "metadata": {
+        "level": "3",
+        "co": "3",
+        "marks": "3",
+        "raw": "CO3    L3    3M"
+      }
+    },
+    {
+      "text": "Develop a complicated data object and discuss viewing in that object.",
+      "metadata": {
+        "level": "6",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L6    12M"
+      }
+    }
+  ],
+  "V": [
+    {
+      "text": "a) Categorize Statistic commands that produce a Single Value as a Summary . \nb) List out Summary of Commands to Add Names to Rows and Columns of Data\nObjects",
+      "metadata": {
+        "level": "4",
+        "co": "5",
+        "marks": "6",
+        "raw": "CO5    L4    6M"
+      }
+    },
+    {
+      "text": "a) Identify  and explain various t -test commands in r.  \nb) Discuss Two -Sample t -Test with Unequal and Equal Variance.",
+      "metadata": {
+        "level": "3",
+        "co": "5",
+        "marks": "6",
+        "raw": "CO5    L3    6M"
+      }
+    },
+    {
+      "text": "a) Why we use Wilcoxon U -Test? Identify the commands in it.  \nb) Discuss Two -Sample and One -Sample in U -Test.",
+      "metadata": {
+        "level": "4",
+        "co": "5",
+        "marks": "6",
+        "raw": "CO5    L4    6M"
+      }
+    },
+    {
+      "text": "Choose the following data2\n> data2",
+      "metadata": {
+        "level": "",
+        "co": "",
+        "marks": "",
+        "raw": ""
+      }
+    },
+    {
+      "text": "5 7 5 3 2 6 8 5 6 9 4 5 7 3 4\nFind the following by using summary statistics commands\ni) Average of the sample\nii) Largest value in the sample\niii) Smallest value in the sample\niv) How many items are in the sample\nv) Look at a different data sample",
+      "metadata": {
+        "level": "5",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L5    12M"
+      }
+    },
+    {
+      "text": "a) Describe various commands of Cumulative measures in R . \nb) Calculate the cumulative values for the following sample data\na <- c(1:9,4,2,4,5:2)",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "6",
+        "raw": "CO5    L2    6M"
+      }
+    },
+    {
+      "text": "a) Explain the importance of bar charts with examples . \nb) Discuss Line charts using numeric data.",
+      "metadata": {
+        "level": "5",
+        "co": "5",
+        "marks": "6",
+        "raw": "CO5    L5    6M"
+      }
+    },
+    {
+      "text": "a) Differentiate Plots and Charts in the Graphical Analysis.  \nb) Draw a pie chart for the following data",
+      "metadata": {
+        "level": "4",
+        "co": "5",
+        "marks": "6",
+        "raw": "CO5    L4    6M"
+      }
+    },
+    {
+      "text": "Identify and explain various types of Graphical Data Analysis.",
+      "metadata": {
+        "level": "3",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L3    12M"
+      }
+    },
+    {
+      "text": "Explain different ways to copy graphics to other applications.",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "Explain different ways to create several graphs in one window.  \nPrepared  by:\nMr. J. S. ANANDA KUMAR\nAssistant Professor/ MCA",
+      "metadata": {
+        "level": "6",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L6    12M"
+      }
+    }
+  ]
+}
