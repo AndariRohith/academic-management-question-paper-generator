@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import '../../styles/DashboardShared.css';
 
 const Generator = () => {
@@ -96,13 +96,18 @@ const Generator = () => {
         });
     };
 
+    const inputRef = useRef(null);
+
     const handleDrag = (e) => {
         e.preventDefault();
         e.stopPropagation();
         if (e.type === 'dragenter' || e.type === 'dragover') {
             setDragActive(true);
         } else if (e.type === 'dragleave') {
-            setDragActive(false);
+            // Only deactivate if leaving the main container
+            if (!e.currentTarget.contains(e.relatedTarget)) {
+                setDragActive(false);
+            }
         }
     };
 
@@ -119,6 +124,10 @@ const Generator = () => {
                 showToast('Please upload a PDF file', 'error');
             }
         }
+    };
+
+    const openFileDialog = () => {
+        inputRef.current.click();
     };
 
     const handleFileInputChange = (e) => {
@@ -287,15 +296,18 @@ const Generator = () => {
                         onDragLeave={handleDrag}
                         onDragOver={handleDrag}
                         onDrop={handleDrop}
+                        onClick={openFileDialog}
                     >
                         <div className="dropzone-icon">📄</div>
                         <h3>Drag & Drop PDF file here</h3>
                         <p>or click to browse</p>
                         <input
+                            ref={inputRef}
                             type="file"
                             accept=".pdf"
                             onChange={handleFileInputChange}
                             disabled={uploading}
+                            style={{ display: 'none' }}
                         />
                         {uploading && <p className="uploading-text">Uploading and parsing...</p>}
                         {uploadedFile && <p className="success-text">✅ Uploaded: {uploadedFile}</p>}

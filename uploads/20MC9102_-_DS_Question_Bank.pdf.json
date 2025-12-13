@@ -1,0 +1,462 @@
+{
+  "I": [
+    {
+      "text": "a) What is an Algorithm?  Explain its specifications.    [6M]\nb) What are the steps required to find sum of two numbers.    [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L1    12M"
+      }
+    },
+    {
+      "text": "a) What is a Data Structure?  Explain its advantages.    [6M]\nb) Explain various types of Data Structures.    [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L1    12M"
+      }
+    },
+    {
+      "text": "a) What is space complexity? Evaluate space complexity for the following code\nint square(int a) { return a*a; }    [6M]\nb) What is time complexity? Evaluate  time complexity for the following code\nint square(int a) { return a*a; }    [6M]",
+      "metadata": {
+        "level": "5",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L5    12M"
+      }
+    },
+    {
+      "text": "Discuss how you can  measure Performance  of an algorithm.    [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L2    12M"
+      }
+    },
+    {
+      "text": "a) Identify the steps to print the product of two numbers.    [6M]\nb) Identify the steps to display numbers from one to given number.    [6M]",
+      "metadata": {
+        "level": "3",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L3    12M"
+      }
+    },
+    {
+      "text": "a) What is an Array?  Explain the representation of an array.   [6M]\nb) Apply  various operations that can perform on array.   [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L2    12M"
+      }
+    },
+    {
+      "text": "a) Explain Linear and Non Linear Data structure with examples   [6M]\nb) Differentiate linear and non -linear data structure .  [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L2    12M"
+      }
+    },
+    {
+      "text": "Analyze and write a program to store a set of values of same data type into a\nsingle variable.   [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L4    12M"
+      }
+    },
+    {
+      "text": "Explain the following i ) Big -Oh  ii) Big -Omega   iii) Big -Theta   [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L2    12M"
+      }
+    },
+    {
+      "text": "Discuss about Asymptotic Notations with their types.   [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L2    12M"
+      }
+    }
+  ],
+  "II": [
+    {
+      "text": "a) Prepare an algorithm to insert an element at the end of doubly linked list .  [6M]\nb) Prepare an algorithm to delete an element at the end of doubly linked list.   [6M]",
+      "metadata": {
+        "level": "3",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L3    12M"
+      }
+    },
+    {
+      "text": "Explain different ways for insert ing an  element  into a Single Linked List with\nexample.   [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L2    12M"
+      }
+    },
+    {
+      "text": "Develop Circularly  Linked List  with various operations.   [12M]",
+      "metadata": {
+        "level": "6",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L6    12M"
+      }
+    },
+    {
+      "text": "a) What is linked list?  What are the different types of linked list?   [6M]\nb) Explain the advantages of linked list over arrays.   [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L1    12M"
+      }
+    },
+    {
+      "text": "a) Design an algorithm to insert an element at beginning of circularly linked\nlist.  [6M]\nb) Design an algorithm to delete an element at end of circular ly linked list.   [6M]",
+      "metadata": {
+        "level": "3",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L3    12M"
+      }
+    },
+    {
+      "text": "a) What is a Stack? What are the operations that perform on a stack?   [6M]\nb) What is a Queue? What are the operations that perform on a Queue?   [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L1    12M"
+      }
+    },
+    {
+      "text": "Develop various stack operations using arrays. With example   [12M]",
+      "metadata": {
+        "level": "6",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L6    12M"
+      }
+    },
+    {
+      "text": "Develop various queue operations using arrays. With example   [12M]",
+      "metadata": {
+        "level": "6",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L6    12M"
+      }
+    },
+    {
+      "text": "What is an expression? Explain various types of expressions with example.   [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L2    12M"
+      }
+    },
+    {
+      "text": "a) Convert the expression (5 + 6) * (6 - 5) from infix to postfix   [6M]\nb) Evaluate the postfix expression 25*423 -*+.  [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L2    12M"
+      }
+    }
+  ],
+  "III": [
+    {
+      "text": "a) What are the different ways to define a tree?   [4M]\nb) Find various terminologies used in a tree. Explain any six terminologies   [8M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    },
+    {
+      "text": "a) Define binary tree and give the binary tree node structure.   [6M]\nb) What are the various types of a binary tree?   [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    },
+    {
+      "text": "a) What is the various representation of a binary tree?   [6M]\nb) List out and explain various binary tree traversals.   [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    },
+    {
+      "text": "Describe different cases to delete an element in BST  with an algorithm and\nexamples.   [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "a) Explain BFS Tree Traversal with an example.   [6M]\nb) Explain DFS Tree Traversal with an example.   [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    },
+    {
+      "text": "Develop B – Tree with various operations.   [12M]",
+      "metadata": {
+        "level": "6",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L6    12M"
+      }
+    },
+    {
+      "text": "a) Analyze the steps  to insert elements into Binary Search Tree.   [6M]\nb) Analyze the steps  to search element in  Binary Search Tree.   [6M]",
+      "metadata": {
+        "level": "4",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L4    12M"
+      }
+    },
+    {
+      "text": "Identify  the following terms from  the given tree\ni) Internal Nodes\nii) External Nodes\niii) Depth\niv) Height\nv) Level\n [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L3    12M"
+      }
+    },
+    {
+      "text": "Identify the following terms from the given tree\ni) Parent\nii) Child\niii) Siblings\niv) Path\nv) Sub Tree\n [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L3    12M"
+      }
+    },
+    {
+      "text": "a) Prepare an algorithm to insert an element  into B+ Tree.   [6M]\nb) Prepare an algorithm to delete an element in B + Tree.   [6M]",
+      "metadata": {
+        "level": "3",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L3    12M"
+      }
+    }
+  ],
+  "IV": [
+    {
+      "text": "a) What do you mean by searching? What are the types of searching?   [6M]\nb) Differentiate various searching techniques.   [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L1    12M"
+      }
+    },
+    {
+      "text": "a) Explain Linear Search with an algorithm and example.   [6M]\nb) Design  a program to demonstrate Linear Search.   [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L2    12M"
+      }
+    },
+    {
+      "text": "Explain about Hashing with an example.   [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L2    12M"
+      }
+    },
+    {
+      "text": "a) Explain Binary Search with an algorithm and example.   [6M]\nb) Develop  a program to demonstrate Binary Search.   [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L2    12M"
+      }
+    },
+    {
+      "text": "a) Discuss Space and Time Complexity for Linear and Binary Search.   [6M]\nb) Distinguish between Linear Search and Binary Search.   [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L2    12M"
+      }
+    },
+    {
+      "text": "a) Explain insertion sort with an algorithm and example.   [5M]\nb) Design  a program to demonstrate insertion sort.   [7M]",
+      "metadata": {
+        "level": "2",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L2    12M"
+      }
+    },
+    {
+      "text": "a) Explain bubble sort with an algorithm and example.   [5M]\nb) Design  a program to demonstrate bubble sort.   [7M]",
+      "metadata": {
+        "level": "2",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L2    12M"
+      }
+    },
+    {
+      "text": "a) Explain selection sort with an algorithm and example.   [5M]\nb) Design  a program to demonstrate selection sort.   [7M]",
+      "metadata": {
+        "level": "2",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L2    12M"
+      }
+    },
+    {
+      "text": "a) Prepare  an algorithm for Quick sort with example.   [6M]\nb) Prepare  an algorithm for Merge sort with example.   [6M]",
+      "metadata": {
+        "level": "3",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L3    12M"
+      }
+    },
+    {
+      "text": "Differentiate various sorting techniques with time complexity.   [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L4    12M"
+      }
+    }
+  ],
+  "V": [
+    {
+      "text": "a) Define Graph. List out various graph operations?   [4M]\nb) What are the various applications and properties of Graphs ?  [8M]",
+      "metadata": {
+        "level": "1",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L1    12M"
+      }
+    },
+    {
+      "text": "a) Discuss BFS Graph Traversal with an algorithm.   [3M]\nb) Explain BFS Graph traversal with steps for the following Graph .\n [9M]",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "What is a Graph ? Explain various Graph terminologies .  [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "a) Discuss DFS Graph Traversal with an algorithm.   [3M]\nb) Explain DFS Graph traversal with steps for the following Graph .\n [9M]",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "a) What is minimum  – cost spanning tree?   [4M]\nb) Prepare an algorithm for Prim’s with example.   [8M]",
+      "metadata": {
+        "level": "1",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L1    12M"
+      }
+    },
+    {
+      "text": "a) Discuss how to represent Graph storage using Adjacency matrix.   [7M]\nb) Briefly explain about Adjacency List with example.   [5M]",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "Illustrate the steps for  Dijkstra’s algorithm with an example.   [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L3    12M"
+      }
+    },
+    {
+      "text": "Explain about shortest path problem  with an algorithm and example.   [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "Explain in detail about various minimum cost spanning tree algorithms.   [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "Discuss and compare various graph traversals.   [12M]",
+      "metadata": {
+        "level": "5",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L5    12M"
+      }
+    }
+  ]
+}

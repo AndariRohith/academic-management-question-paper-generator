@@ -1,0 +1,471 @@
+{
+  "I": [
+    {
+      "text": "a) Describe various features of a python.    [6M]\nb) Explain in brief about the application of python.    [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L1    12M"
+      }
+    },
+    {
+      "text": "a) Describe the need of python.    [4M]\nb) List out various applications of python.    [8M]",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L2    12M"
+      }
+    },
+    {
+      "text": "List and explain various data types in python. With example.    [12M]",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L1    12M"
+      }
+    },
+    {
+      "text": "Compare and explain the following operators with an example\ni) Assignment   ii) Membership  iii) Identify    [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L4    12M"
+      }
+    },
+    {
+      "text": "a) Describe input -output in python with example.    [7M]\nb) Explain indentation with example.    [5M]",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L1    12M"
+      }
+    },
+    {
+      "text": "a) Choose various operators of Arithmetic and Comparison.    [6M]\nb) Design a python program to demonstrate logical operator.    [6M]",
+      "metadata": {
+        "level": "5",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L5    12M"
+      }
+    },
+    {
+      "text": "a) Explain various conditional statements in python.    [6M]\nb) Develop a python program to find largest of two numbers.    [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L2    12M"
+      }
+    },
+    {
+      "text": "Develop a python program to demonstrate break and continue statements.    [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L4    12M"
+      }
+    },
+    {
+      "text": "a) Demonstrate for and while statements in python with example.    [6M]\nb) Build a python program to check given number is positive or negative or zero.    [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L2    12M"
+      }
+    },
+    {
+      "text": "a) Explain various looping statements in python.    [6M]\nb) Develop a python program to display numbers up to given number.    [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L2    12M"
+      }
+    }
+  ],
+  "II": [
+    {
+      "text": "a) How can we create and access the list in python.   [6M]\nb) Identify various methods to perform on list.  [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L2    12M"
+      }
+    },
+    {
+      "text": "Compare and explain various data structures in python with examples.   [12M]",
+      "metadata": {
+        "level": "5",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L5    12M"
+      }
+    },
+    {
+      "text": "a) How can we create and access the tuple in python.   [6M]\nb) Identify various methods performed on tuple.   [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L2    12M"
+      }
+    },
+    {
+      "text": "Classify  various slicing operations on a data structure   [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L4    12M"
+      }
+    },
+    {
+      "text": "a) How can we create and access the set in python.   [6M]\nb) Identify various methods to perform on set.   [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L2    12M"
+      }
+    },
+    {
+      "text": "a) What is a function? Explain how we can create a function.   [6M]\nb) Explain different ways to pass arguments in a function. With example   [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L1    12M"
+      }
+    },
+    {
+      "text": "Distinguish  various  types of  arguments with example program in python .  [12M]",
+      "metadata": {
+        "level": "5",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L5    12M"
+      }
+    },
+    {
+      "text": "a) Illustrate the fruitful functions in python with example.   [6M]\nb) Discuss about Anonymous  functions in python with an example.   [6M]",
+      "metadata": {
+        "level": "3",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L3    12M"
+      }
+    },
+    {
+      "text": "Differentiate and explain local and global variable with an example python program.   [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L4    12M"
+      }
+    },
+    {
+      "text": "Illustrate modules in python with an example   [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L3    12M"
+      }
+    }
+  ],
+  "III": [
+    {
+      "text": "a) How a class and an object can  can create in python.   [4M]\nb) Create a Student class and initialize it with name and roll number. Design\nmethods for  i) Display to display all the information of the student.\nii) setAge to set the age of the student.\niii) setMarks to assign marks to the student.   [8M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    },
+    {
+      "text": "Discuss object oriented programming in python with creation of class and object.   [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "a) Illustrate class inheritance in Python with an example   [6M]\nb) Write a python program to find the area of a cone and circle using inheritance.   [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "How do we  access parent members in the child class?  Explain with an example.   [12M]",
+      "metadata": {
+        "level": "6",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L6    12M"
+      }
+    },
+    {
+      "text": "a) Explain encapsulation in python with an example.   [6M]\nb) What is init method in python?  Explain with example.   [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "How does inheritance work in python? Explain it with an example.   [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "a) Discuss in detail about polymorphism in python.   [6M]\nb) Explain method overriding in python with an example program.   [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "a) What is an Error? Explain types of errors.   [6M]\nb) Compare and explain  various built -in exception in python.   [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "Differentiate error and exception with an example program.   [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L4    12M"
+      }
+    },
+    {
+      "text": "a) Discuss how we can  raise an exception.   [6M]\nb) Write a simple program which illustrates Handling Exceptions.   [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    }
+  ],
+  "IV": [
+    {
+      "text": "a) What are the various Command Packages  in R?   [6M]\nb) How to Get Extra Packages of R Commands ?  [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    },
+    {
+      "text": "a) What is R? List the features and applications of R.   [6M]\nb) Explain the advantages and disadvantages of R.   [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    },
+    {
+      "text": "Demonstrate the Help Command in R Language.   [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "a) List the functions for reading data into R.   [6M]\nb) List the functions for writing data  to files in R.   [6M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    },
+    {
+      "text": "Illustrate various Mathematical Operations available in R Language. With example.   [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L3    12M"
+      }
+    },
+    {
+      "text": "a) Differentiate between Vector, List, Matrix, and Data frame.   [4M]\nb) What is a vector in R? Explain different ways to create a vector.   [8M]",
+      "metadata": {
+        "level": "4",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L4    12M"
+      }
+    },
+    {
+      "text": "a) Identify different ways to select and display parts of a Vector Object.   [7M]\nb) How can we rearrange the items in a vector?   [5M]",
+      "metadata": {
+        "level": "3",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L3    12M"
+      }
+    },
+    {
+      "text": "a) Calculate Cumulative Sum of a Numeric Object in R Programming   [4M]\nb) Construct a list data object with an example in R.   [8M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "a) How do we convert matrix to data frame in R? Explain with example.   [3M]\nb) How do we convert data frame into a matrix? Explain with example   [9M]",
+      "metadata": {
+        "level": "3",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L3    12M"
+      }
+    },
+    {
+      "text": "Develop a complicated data object and discuss viewing in that object.   [12M]",
+      "metadata": {
+        "level": "6",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L6    12M"
+      }
+    }
+  ],
+  "V": [
+    {
+      "text": "a) Categorize Statistic commands that produce a Single Value as a Summary .  [6M]\nb) List out Summary of Commands to Add Names to Rows and Columns of Data\nObjects   [6M]",
+      "metadata": {
+        "level": "4",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L4    12M"
+      }
+    },
+    {
+      "text": "a) Identify  and explain various t -test commands in r.   [6M]\nb) Discuss Two -Sample t -Test with Unequal and Equal Variance.   [6M]",
+      "metadata": {
+        "level": "3",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L3    12M"
+      }
+    },
+    {
+      "text": "a) Why we use Wilcoxon U -Test? Identify the commands in it.   [6M]\nb) Discuss Two -Sample and One -Sample in U -Test.   [6M]",
+      "metadata": {
+        "level": "4",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L4    12M"
+      }
+    },
+    {
+      "text": "Choose the following data2\n> data2",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "",
+        "raw": "CO1    L2    M"
+      }
+    },
+    {
+      "text": "5 7 5 3 2 6 8 5 6 9 4 5 7 3 4\nFind the following by using summary statistics commands\ni) Average of the sample\nii) Largest value in the sample\niii) Smallest value in the sample\niv) How many items are in the sample\nv) Look at a different data sample   [12M]",
+      "metadata": {
+        "level": "5",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L5    12M"
+      }
+    },
+    {
+      "text": "a) Describe various commands of Cumulative measures in R .  [6M]\nb) Calculate the cumulative values for the following sample data\na <- c(1:9,4,2,4,5:2)   [6M]",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "a) Explain the importance of bar charts with examples .  [6M]\nb) Discuss Line charts using numeric data.   [6M]",
+      "metadata": {
+        "level": "5",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L5    12M"
+      }
+    },
+    {
+      "text": "a) Differentiate Plots and Charts in the Graphical Analysis.   [6M]\nb) Draw a pie chart for the following data\n [6M]",
+      "metadata": {
+        "level": "4",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L4    12M"
+      }
+    },
+    {
+      "text": "Identify and explain various types of Graphical Data Analysis.   [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L3    12M"
+      }
+    },
+    {
+      "text": "Explain different ways to copy graphics to other applications.   [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "Explain different ways to create several graphs in one window.   [12M]",
+      "metadata": {
+        "level": "6",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L6    12M"
+      }
+    }
+  ]
+}

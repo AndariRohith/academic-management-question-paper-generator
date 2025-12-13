@@ -1,0 +1,101 @@
+unit,question_number,question_text,taxonomy_level,course_outcome,marks,has_or
+1,1,"a) What is an Algorithm?  Explain its specifications.    [6M]
+b) What are the steps required to find sum of two numbers.    [6M]",1,1,12,False
+1,2,"a) What is a Data Structure?  Explain its advantages.    [6M]
+b) Explain various types of Data Structures.    [6M]",1,1,12,False
+1,3,"a) What is space complexity? Evaluate space complexity for the following code
+int square(int a) { return a*a; }    [6M]
+b) What is time complexity? Evaluate  time complexity for the following code
+int square(int a) { return a*a; }    [6M]",5,1,12,False
+1,4,Discuss how you can  measure Performance  of an algorithm.    [12M],2,1,12,False
+1,5,"a) Identify the steps to print the product of two numbers.    [6M]
+b) Identify the steps to display numbers from one to given number.    [6M]",3,1,12,False
+1,6,"a) What is an Array?  Explain the representation of an array.   [6M]
+b) Apply  various operations that can perform on array.   [6M]",2,2,12,False
+1,7,"a) Explain Linear and Non Linear Data structure with examples   [6M]
+b) Differentiate linear and non -linear data structure .  [6M]",2,1,12,False
+1,8,"Analyze and write a program to store a set of values of same data type into a
+single variable.   [12M]",4,2,12,False
+1,9,Explain the following i ) Big -Oh  ii) Big -Omega   iii) Big -Theta   [12M],2,2,12,False
+1,10,Discuss about Asymptotic Notations with their types.   [12M],2,2,12,False
+2,1,"a) Prepare an algorithm to insert an element at the end of doubly linked list .  [6M]
+b) Prepare an algorithm to delete an element at the end of doubly linked list.   [6M]",3,2,12,False
+2,2,"Explain different ways for insert ing an  element  into a Single Linked List with
+example.   [12M]",2,2,12,False
+2,3,Develop Circularly  Linked List  with various operations.   [12M],6,2,12,False
+2,4,"a) What is linked list?  What are the different types of linked list?   [6M]
+b) Explain the advantages of linked list over arrays.   [6M]",1,2,12,False
+2,5,"a) Design an algorithm to insert an element at beginning of circularly linked
+list.  [6M]
+b) Design an algorithm to delete an element at end of circular ly linked list.   [6M]",3,2,12,False
+2,6,"a) What is a Stack? What are the operations that perform on a stack?   [6M]
+b) What is a Queue? What are the operations that perform on a Queue?   [6M]",1,2,12,False
+2,7,Develop various stack operations using arrays. With example   [12M],6,2,12,False
+2,8,Develop various queue operations using arrays. With example   [12M],6,2,12,False
+2,9,What is an expression? Explain various types of expressions with example.   [12M],2,2,12,False
+2,10,"a) Convert the expression (5 + 6) * (6 - 5) from infix to postfix   [6M]
+b) Evaluate the postfix expression 25*423 -*+.  [6M]",2,2,12,False
+3,1,"a) What are the different ways to define a tree?   [4M]
+b) Find various terminologies used in a tree. Explain any six terminologies   [8M]",1,3,12,False
+3,2,"a) Define binary tree and give the binary tree node structure.   [6M]
+b) What are the various types of a binary tree?   [6M]",1,3,12,False
+3,3,"a) What is the various representation of a binary tree?   [6M]
+b) List out and explain various binary tree traversals.   [6M]",1,3,12,False
+3,4,"Describe different cases to delete an element in BST  with an algorithm and
+examples.   [12M]",2,3,12,False
+3,5,"a) Explain BFS Tree Traversal with an example.   [6M]
+b) Explain DFS Tree Traversal with an example.   [6M]",1,3,12,False
+3,6,Develop B – Tree with various operations.   [12M],6,3,12,False
+3,7,"a) Analyze the steps  to insert elements into Binary Search Tree.   [6M]
+b) Analyze the steps  to search element in  Binary Search Tree.   [6M]",4,3,12,False
+3,8,"Identify  the following terms from  the given tree
+i) Internal Nodes
+ii) External Nodes
+iii) Depth
+iv) Height
+v) Level
+ [12M]",3,3,12,False
+3,9,"Identify the following terms from the given tree
+i) Parent
+ii) Child
+iii) Siblings
+iv) Path
+v) Sub Tree
+ [12M]",3,3,12,False
+3,10,"a) Prepare an algorithm to insert an element  into B+ Tree.   [6M]
+b) Prepare an algorithm to delete an element in B + Tree.   [6M]",3,3,12,False
+4,1,"a) What do you mean by searching? What are the types of searching?   [6M]
+b) Differentiate various searching techniques.   [6M]",1,4,12,False
+4,2,"a) Explain Linear Search with an algorithm and example.   [6M]
+b) Design  a program to demonstrate Linear Search.   [6M]",2,4,12,False
+4,3,Explain about Hashing with an example.   [12M],2,4,12,False
+4,4,"a) Explain Binary Search with an algorithm and example.   [6M]
+b) Develop  a program to demonstrate Binary Search.   [6M]",2,4,12,False
+4,5,"a) Discuss Space and Time Complexity for Linear and Binary Search.   [6M]
+b) Distinguish between Linear Search and Binary Search.   [6M]",2,4,12,False
+4,6,"a) Explain insertion sort with an algorithm and example.   [5M]
+b) Design  a program to demonstrate insertion sort.   [7M]",2,4,12,False
+4,7,"a) Explain bubble sort with an algorithm and example.   [5M]
+b) Design  a program to demonstrate bubble sort.   [7M]",2,4,12,False
+4,8,"a) Explain selection sort with an algorithm and example.   [5M]
+b) Design  a program to demonstrate selection sort.   [7M]",2,4,12,False
+4,9,"a) Prepare  an algorithm for Quick sort with example.   [6M]
+b) Prepare  an algorithm for Merge sort with example.   [6M]",3,4,12,False
+4,10,Differentiate various sorting techniques with time complexity.   [12M],4,4,12,False
+5,1,"a) Define Graph. List out various graph operations?   [4M]
+b) What are the various applications and properties of Graphs ?  [8M]",1,5,12,False
+5,2,"a) Discuss BFS Graph Traversal with an algorithm.   [3M]
+b) Explain BFS Graph traversal with steps for the following Graph .
+ [9M]",2,5,12,False
+5,3,What is a Graph ? Explain various Graph terminologies .  [12M],2,5,12,False
+5,4,"a) Discuss DFS Graph Traversal with an algorithm.   [3M]
+b) Explain DFS Graph traversal with steps for the following Graph .
+ [9M]",2,5,12,False
+5,5,"a) What is minimum  – cost spanning tree?   [4M]
+b) Prepare an algorithm for Prim’s with example.   [8M]",1,5,12,False
+5,6,"a) Discuss how to represent Graph storage using Adjacency matrix.   [7M]
+b) Briefly explain about Adjacency List with example.   [5M]",2,5,12,False
+5,7,Illustrate the steps for  Dijkstra’s algorithm with an example.   [12M],3,5,12,False
+5,8,Explain about shortest path problem  with an algorithm and example.   [12M],2,5,12,False
+5,9,Explain in detail about various minimum cost spanning tree algorithms.   [12M],2,5,12,False
+5,10,Discuss and compare various graph traversals.   [12M],5,5,12,False

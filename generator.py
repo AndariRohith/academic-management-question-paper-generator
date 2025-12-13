@@ -140,55 +140,53 @@ def parse_question_metadata(question_text):
     Returns: (clean_text, metadata_dict)
     """
     
-    # Format 1: [L2][CO1][12M]
-    # Regex for metadata with relaxed spacing
-    # Matches [L2][CO1][10M] or [L2] [CO1] [10M] or [CO1 L2 10M]
-    # We prioritize the bracketed format but with \s* to allow spaces
-    bracket_pattern = re.compile(r"\[\s*L(\d+)\s*\]\s*\[\s*CO(\d+)\s*\]\s*\[\s*(\d+)M\s*\]", re.IGNORECASE)
+    # Format 1: [L2][CO1][12M] or variations
+    # We want to catch ALL marks to sum them up, e.g. [6M] ... [6M] -> 12M
+    # We also want to KEEP the marks in the text for sub-questions.
     
-    # Check for plain format: CO1 L2 12M
-    # Pattern: CO(\d+)\s+L(\d+)\s+(\d+)M
-    plain_pattern = re.compile(r"CO(\d+)\s+L(\d+)\s+(\d+)M", re.IGNORECASE)
+    # Extract ALL marks in the string
+    marks_matches = re.findall(r"(\d+)\s*M", question_text, re.IGNORECASE)
+    total_marks = 0
+    if marks_matches:
+        total_marks = sum(int(m) for m in marks_matches)
+    
+    # If no total_marks found, default to 0 for now (will be handled by caller)
+    marks_str = str(total_marks) if total_marks > 0 else ""
+
+    # Check for CO/L metadata (usually at the end or beginning)
+    # We will still try to parse CO/L but won't remove marks from text
+    
+    bracket_pattern = re.compile(r"\[\s*L(\d+)\s*\]\s*\[\s*CO(\d+)\s*\]", re.IGNORECASE)
+    plain_pattern = re.compile(r"CO(\d+)\s+L(\d+)", re.IGNORECASE)
+    
+    co = "1"
+    level = "2" # Default
     
     match_bracket = bracket_pattern.search(question_text)
     match_plain = plain_pattern.search(question_text)
     
+    clean_text = question_text
+    
     if match_bracket:
         level = match_bracket.group(1)
         co = match_bracket.group(2)
-        marks = match_bracket.group(3)
+        # Remove CO/L tags but keep marks
         clean_text = re.sub(bracket_pattern, '', question_text).strip()
-        metadata = {
-            'level': level,
-            'co': co,
-            'marks': marks,
-            'raw': f"CO{co}    L{level}    {marks}M"
-        }
-        return clean_text, metadata
-        
     elif match_plain:
-        # Extract groups. The order in regex is CO, L, M.
-        co_str = match_plain.group(1) # CO1
-        level_str = match_plain.group(2) # L2
-        marks_str = match_plain.group(3) # 12
-        
-        co = co_str.replace("CO", "")
-        level = level_str.replace("L", "")
-        marks = marks_str
-        
+        co = match_plain.group(1)
+        level = match_plain.group(2)
         clean_text = re.sub(plain_pattern, '', question_text).strip()
         
-        metadata = {
-            'level': level,
-            'co': co,
-            'marks': marks,
-            'raw': f"{co_str}    {level_str}    {marks_str}M"
-        }
-        return clean_text, metadata
+    metadata = {
+        'level': level,
+        'co': co,
+        'marks': marks_str,
+        'raw': f"CO{co}    L{level}    {marks_str}M"
+    }
+    return clean_text, metadata
 
-    else:
-        # No metadata found
-        return question_text, {'level': '', 'co': '', 'marks': '', 'raw': ''}
+
+
 
 def extract_questions_to_csv(pdf_path, csv_path):
     text = extract_pdf(pdf_path)
@@ -202,7 +200,7 @@ def extract_questions_to_csv(pdf_path, csv_path):
     q_start_pattern = re.compile(r"^(\d{1,2})([\.\)\s])\s*")
     
     noise_patterns = [
-        re.compile(r"^Prepared by", re.IGNORECASE),
+        re.compile(r"^Prepared\s+by", re.IGNORECASE),
         re.compile(r"^Section\s+[IVX]+", re.IGNORECASE),
         re.compile(r"^No\.?\s*of\s*workers", re.IGNORECASE),
         re.compile(r"^Page\s+\d+", re.IGNORECASE),
@@ -213,6 +211,19 @@ def extract_questions_to_csv(pdf_path, csv_path):
         re.compile(r"^Subject\s+with", re.IGNORECASE),
         re.compile(r"^Question\s+Bank", re.IGNORECASE),
         re.compile(r"^Year\s*&\s*Sem", re.IGNORECASE),
+        # New filters for professor details
+        re.compile(r"^Course\s+Coordinator", re.IGNORECASE),
+        re.compile(r"^Module\s+Coordinator", re.IGNORECASE),
+        re.compile(r"^HOD", re.IGNORECASE),
+        re.compile(r"^Head\s+of\s+Dept", re.IGNORECASE),
+        re.compile(r"^Head\s+of\s+the\s+Department", re.IGNORECASE),
+        re.compile(r"^(Dr\.|Prof\.|Mr\.|Ms\.|Mrs\.)\s+[A-Z]", re.IGNORECASE), # Names starting with titles
+        re.compile(r"^Assistant\s+Professor", re.IGNORECASE),
+        re.compile(r"^Associate\s+Professor", re.IGNORECASE),
+        re.compile(r"^Professor", re.IGNORECASE),
+        re.compile(r"^Faculty", re.IGNORECASE),
+        re.compile(r"^Dept\.?\s+of", re.IGNORECASE),
+        re.compile(r"\(?AUTONOMOUS\)?", re.IGNORECASE),
     ]
     
     current_block = []
@@ -229,7 +240,8 @@ def extract_questions_to_csv(pdf_path, csv_path):
              r"Regulation\s*:?.*",
              r"H\.T\.No\..*",
              r"\d+[A-Z]{2}\d+.*",
-             r"R\d+$"
+             r"R\d+$",
+             r"\(?AUTONOMOUS\)?"
         ]
         for pat in footer_noise:
             clean_text = re.sub(pat, "", clean_text, flags=re.IGNORECASE).strip()
@@ -323,7 +335,7 @@ def split_questions(text):
     q_start_pattern = re.compile(r"^(\d{1,2})([\.\)\s])\s*")
     
     noise_patterns = [
-        re.compile(r"^Prepared by", re.IGNORECASE),
+        re.compile(r"^Prepared\s+by", re.IGNORECASE),
         re.compile(r"^Section\s+[IVX]+", re.IGNORECASE),
         re.compile(r"^No\.?\s*of\s*workers", re.IGNORECASE),
         re.compile(r"^Page\s+\d+", re.IGNORECASE),
@@ -334,6 +346,19 @@ def split_questions(text):
         re.compile(r"^Subject\s+with", re.IGNORECASE),
         re.compile(r"^Question\s+Bank", re.IGNORECASE),
         re.compile(r"^Year\s*&\s*Sem", re.IGNORECASE),
+        # New filters for professor details
+        re.compile(r"^Course\s+Coordinator", re.IGNORECASE),
+        re.compile(r"^Module\s+Coordinator", re.IGNORECASE),
+        re.compile(r"^HOD", re.IGNORECASE),
+        re.compile(r"^Head\s+of\s+Dept", re.IGNORECASE),
+        re.compile(r"^Head\s+of\s+the\s+Department", re.IGNORECASE),
+        re.compile(r"^(Dr\.|Prof\.|Mr\.|Ms\.|Mrs\.)\s+[A-Z]", re.IGNORECASE), 
+        re.compile(r"^Assistant\s+Professor", re.IGNORECASE),
+        re.compile(r"^Associate\s+Professor", re.IGNORECASE),
+        re.compile(r"^Professor", re.IGNORECASE),
+        re.compile(r"^Faculty", re.IGNORECASE),
+        re.compile(r"^Dept\.?\s+of", re.IGNORECASE),
+        re.compile(r"\(?AUTONOMOUS\)?", re.IGNORECASE),
     ]
     
     current_block = []
@@ -349,7 +374,8 @@ def split_questions(text):
              r"Regulation\s*:?.*",
              r"H\.T\.No\..*",
              r"\d+[A-Z]{2}\d+.*",
-             r"R\d+$"
+             r"R\d+$",
+             r"\(?AUTONOMOUS\)?"
         ]
         for pat in footer_noise:
             clean_text = re.sub(pat, "", clean_text, flags=re.IGNORECASE).strip()
@@ -500,8 +526,11 @@ def generate_pdf(parsed, meta, path, seed):
     c.rect(margin_x + 240, y - 30, 280, 25)  # H.T.No box
     
     c.setFont("Helvetica-Bold", 10)
-    c.drawString(margin_x + 5, y - 18, f"O.P.Code: {meta.get('subject_code', 'XXXXXX')}")
-    c.drawString(margin_x + 165, y - 18, meta.get('regulation', 'R20'))
+    c.setFont("Helvetica-Bold", 10)
+    # Centered text in boxes
+    c.drawString(margin_x + 5, y - 18, "O.P.Code:")
+    c.drawCentredString(margin_x + 95, y - 18, meta.get('subject_code', 'XXXXXX')) # Center in O.P Code value space
+    c.drawCentredString(margin_x + 190, y - 18, meta.get('regulation', 'R20')) # Center in Reg box
     c.drawString(margin_x + 250, y - 18, "H.T.No.")
     
     # Small boxes for H.T.No
@@ -578,34 +607,74 @@ def generate_pdf(parsed, meta, path, seed):
             if not text:
                 text = "No question text available."
             
-            # Format: "{prefix_num}. <Full Question Text> [12 Marks]"
             
-            full_text = f"{prefix_num}. {text} [12 Marks]"
+            # Helper to check for marks at end of line
+            # Matches [12M], (12M), 12M, [12 Marks] etc
+            marks_pat = re.compile(r"\[?\s*(\d+)\s*[M|Marks]+\s*\]?$", re.IGNORECASE)
             
-            lines = wrap_text(full_text, W - 80)
+            # Split text by newlines to handle sub-questions (a, b)
+            # We want to process each line: strict wrap, and if it had marks, put them at the right
             
-            for line in lines:
-                if y < 60:
-                    c.showPage()
-                    y = H - 50
-                c.drawString(margin_x, y, line)
-                y -= 14
+            sub_lines = text.split('\n')
             
-            # Add 2-3 blank lines for readability
-            y -= 40
+            # Print Number only for first line
+            first_line_prefix = f"{prefix_num}. "
+            indent_prefix = " " * len(first_line_prefix)
+            
+            for idx, raw_line in enumerate(sub_lines):
+                raw_line = raw_line.strip()
+                if not raw_line: continue
+                
+                # Check for marks
+                line_marks = ""
+                m_match = marks_pat.search(raw_line)
+                clean_line_text = raw_line
+                if m_match:
+                    line_marks = f"[{m_match.group(1)}M]"
+                    # Remove marks from line so we don't double print
+                    # clean_line_text = raw_line[:m_match.start()].strip() # Keep marks in text? No, user wants right aligned.
+                    clean_line_text = raw_line[:m_match.start()].strip()
+                
+                # Add prefix
+                if idx == 0:
+                     wrapped_text_input = first_line_prefix + clean_line_text
+                else:
+                     wrapped_text_input = indent_prefix + clean_line_text
+                     
+                # Wrap text - leave space for marks on the right if present
+                # 40px for marks approx
+                wrap_width = W - 80 - (40 if line_marks else 0)
+                
+                lines = wrap_text(wrapped_text_input, wrap_width)
+                
+                for line_idx, line in enumerate(lines):
+                    if y < 60:
+                        c.showPage()
+                        y = H - 50
+                    
+                    c.drawString(margin_x, y, line)
+                    
+                    # If this is the last line of the paragraph AND we have marks
+                    if line_marks and line_idx == len(lines) - 1:
+                        c.drawRightString(W - margin_x, y, line_marks)
+                    
+                    y -= 14
+            
+            # Add reduced blank lines for readability (was 25)
+            y -= 25
 
         # Draw Q1
         draw_question_block(q1, q1_meta, qnum)
 
         # OR
-        y -= 10 # Add padding before OR
+        # y -= 10 # REMOVED PADDING
         if y < 80:
             c.showPage()
             y = H - 50
             
         c.setFont("Helvetica-Bold", 10)
         c.drawCentredString(W / 2, y, "OR")
-        y -= 25 # Increased padding after OR
+        y -= 15 # Reduced padding after OR (was 25)
 
 
         # Question 2
