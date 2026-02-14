@@ -1,0 +1,114 @@
+unit,question_number,question_text,taxonomy_level,course_outcome,marks,has_or
+1,1,"a) Define HTML. Write basic tags of HTML .
+b) Develop a webpage to demonstrate Hea ding tags in HTML.  
+  [06M]
+[06M]",1,1,12,False
+1,2,Discuss about formatting txt in html with example program.    [12M],2,1,12,False
+1,3,"a) Explain the structure of HTML program.
+b) What are the merits and demerits of html?  
+  [06M]
+[06M]",2,1,12,False
+1,4,"a) Discuss about forms in html.
+b) Explain about HTML controls with example  
+  [06M]
+[06M]",2,1,12,False
+1,5,"a) What is <IMG> tag? What are the attributes used with <IMG> tag?
+b) What is <TABLE> tag? What are the attributes that can be use with table
+tag? 
+  [06M]
+[06M]",1,1,12,False
+1,6,Design a webpage which shows the information of an organization.    [12M],6,1,12,False
+1,7,"a) What is Hyperlink? How they are created?
+b) Develop an html program to demonstrate hyperlink.  
+  [06M]
+[06M]",1,1,12,False
+1,8,"a) What do you mean by FRAME? How these can be created in webpage?
+b) Explain the <FRAME>, <FRAMESET> tags.  
+  [06M]
+[06M]",1,1,12,False
+1,9,"a) Explain various media tags in HTML5 with examples.
+b) How will you insert an image in a HTML page?   
+  [06M]
+[06M]",2,1,12,False
+1,10,Define CSS. Analyze  about  working with style sheets.    [12M],1,1,12,False
+2,1,"a) Explain various conditional operators in JavaScript.
+b) Build a JavaScript application to d emonstrate Arithmetic operators.  
+  [06M]
+[06M]",2,2,12,False
+2,2,"a) List various features of JavaScript.
+b) Discuss JavaScript Data types with an example program.  
+  [06M]
+[06M]",1,2,12,False
+2,3,"a) Distinguish while & do -while in JavaScript with an e xample.
+b) Build a JavaScript code to compare three numbers and to display the
+maximum number.  
+  [06M]
+[06M]",5,2,12,False
+2,4,Design a web page to demonstrate string objects in JavaScript.    [12M],4,2,12,False
+2,5,"List out  the importance of JavaScript. Ex plain the usage of JavaScript in
+HTML document.    [12M]",1,2,12,False
+2,6,"Choose various conditional statements in JavaScript with an example
+program.    [12M]",6,2,12,False
+2,7,"Identify various math  and date  objects in Java Script  and explain wih
+examples .   [12M]",3,2,12,False
+2,8,"a) Explain various comparison operators in JavaScript
+b) Build a JavaScript application to demonstrate Logical operators.  
+  [06M]
+[06M]",2,2,12,False
+2,9,Design a web page to demonstrate array objects in JavaScript.     [12M],4,2,12,False
+2,10,"a) What ar e events? Explain events used in JavaScript.
+b) How object is created in Java Script. Explain  
+  [06M]
+[06M]",1,2,12,False
+3,1,"a) Define Cookies. Explain with diagram how cookies work .
+b) Explain di fferent types of cookies along with their classes & method.  
+  [06M]
+[06M]",1,3,12,False
+3,2,Discuss various session tracking techniques in detail.    [12M],2,3,12,False
+3,3,Analyze with steps to handle http request and response.    [12M],4,3,12,False
+3,4,How will you  read the servlet parameters? Explain the examples.    [12M],2,3,12,False
+3,5,"a) List various interfaces and classes in javax.servlet package.
+b) List various interfaces and classes in javax.servlet.http package.  
+  [06M]
+[06M]",1,3,12,False
+3,6,"a) What is JSP?
+b) Identify the need of JSP? Explain clearly.  
+  [04M]
+[08M]",1,3,12,False
+3,7,Clearly Explain the life cycle of JSP.    [12M],2,3,12,False
+3,8,Create simple JSP page and explain the steps involved withi in it.    [12M],3,3,12,False
+3,9,List implicit objects in JSP. Explain clearly.    [12M],1,3,12,False
+3,10,What are the JSP basi c tags? Explain any JSP program using tags.    [12M],1,3,12,False
+4,1,What is PHP? What is variable in PHP? Explain variables in detail.     [12M],1,4,12,False
+4,2,"a) List and discuss various data types available in PHP.
+b) Explain String of PHP in detail.  
+  [06M]
+[06M]",1,4,12,False
+4,3,"Analyze about echo, print & constants in PHP .   [12M]",4,4,12,False
+4,4,Discuss about operators of PHP in detail.    [12M],2,4,12,False
+4,5,"a) How will you define a function in PHP? Explain.
+b) Develop PHP program to illustrate a function.  
+  [05M]
+[07M]",1,4,12,False
+4,6,Identify the role of  control structures of PHP in detail.    [12M],3,4,12,False
+4,7,"a) What is an array in PHP?
+b) Design a sam ple program to demonstrate array.   
+  [05M]
+[07M]",1,4,12,False
+4,8,Explain the process of handling a form with example.    [12M],3,4,12,False
+4,9,Explain the process of handling files of PHP in detail.    [12M],5,4,12,False
+4,10,Identify the steps to handle error s and exceptions in PHP?    [12M],3,4,12,False
+5,1,"a) What is AJAX? Why AJAX is necessary?
+b) Explain XMLHttp of AJAX in detail.  
+  [06M]
+[06M]",1,5,12,False
+5,2,Briefly e xplain the process of having XML using AJAX.    [12M],2,5,12,False
+5,3,"Discuss ab out requests, responses in AJAX.    [12M]",2,5,12,False
+5,4,Clearly explain with steps to access the database in AJAX?    [12M],3,5,12,False
+5,5,Explain how do you handle dynamic HTML with AJAX?    [12M],2,5,12,False
+5,6,Analyze and explain request s handle in AJAX?    [12M],4,5,12,False
+5,7,Analyze h ow will you access data from the tables stored in database?    [12M],4,5,12,False
+5,8,Explain PHP with AJAX in detail using a program.    [12M],2,5,12,False
+5,9,"Develop an AJAX program that access details from XML and displa y the
+same.    [12M]",6,5,12,False
+5,10,Identify  the process of sending data to the server using i) GET ii) POST    [12M],3,5,12,False

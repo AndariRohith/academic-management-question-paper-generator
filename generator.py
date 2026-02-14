@@ -156,8 +156,9 @@ def parse_question_metadata(question_text):
     # Check for CO/L metadata (usually at the end or beginning)
     # We will still try to parse CO/L but won't remove marks from text
     
-    bracket_pattern = re.compile(r"\[\s*L(\d+)\s*\]\s*\[\s*CO(\d+)\s*\]", re.IGNORECASE)
-    plain_pattern = re.compile(r"CO(\d+)\s+L(\d+)", re.IGNORECASE)
+    # Regex to capture [L#][CO#] with optional spaces e.g. [L 1] [CO 1]
+    bracket_pattern = re.compile(r"\[\s*L\s*(\d+)\s*\]\s*\[\s*CO\s*(\d+)\s*\]", re.IGNORECASE)
+    plain_pattern = re.compile(r"CO\s*(\d+)\s+L\s*(\d+)", re.IGNORECASE)
     
     co = "1"
     level = "2" # Default
@@ -608,15 +609,34 @@ def generate_pdf(parsed, meta, path, seed):
                 text = "No question text available."
             
             
-            # Helper to check for marks at end of line
-            # Matches [12M], (12M), 12M, [12 Marks] etc
-            marks_pat = re.compile(r"\[?\s*(\d+)\s*[M|Marks]+\s*\]?$", re.IGNORECASE)
+            # Strict match for [XXM] or (XXM) or XXM at end of line
+            # Capture the whole group including brackets
+            marks_pat = re.compile(r"(\[?\(?\s*\d+\s*(?:M|Marks?)\s*\]?\)?)\s*$", re.IGNORECASE)
             
-            # Split text by newlines to handle sub-questions (a, b)
-            # We want to process each line: strict wrap, and if it had marks, put them at the right
-            
+            # Split text by newlines to handle sub-questions
             sub_lines = text.split('\n')
             
+            # Pre-process: Merge orphan marks lines into previous line
+            merged_lines = []
+            for sl in sub_lines:
+                sl = sl.strip()
+                if not sl: continue
+                
+                # Check if this line is JUST marks
+                is_marks_only = marks_pat.match(sl)
+                
+                if is_marks_only and merged_lines:
+                    # Check if the previous line ALREADY has marks.
+                    # If so, do NOT merge (avoid double marks or conflicting marks on one line)
+                    if marks_pat.search(merged_lines[-1]):
+                        merged_lines.append(sl)
+                    else:
+                        merged_lines[-1] += " " + sl
+                else:
+                    merged_lines.append(sl)
+            
+            sub_lines = merged_lines
+
             # Print Number only for first line
             first_line_prefix = f"{prefix_num}. "
             indent_prefix = " " * len(first_line_prefix)
@@ -629,11 +649,22 @@ def generate_pdf(parsed, meta, path, seed):
                 line_marks = ""
                 m_match = marks_pat.search(raw_line)
                 clean_line_text = raw_line
+                
                 if m_match:
-                    line_marks = f"[{m_match.group(1)}M]"
-                    # Remove marks from line so we don't double print
-                    # clean_line_text = raw_line[:m_match.start()].strip() # Keep marks in text? No, user wants right aligned.
-                    clean_line_text = raw_line[:m_match.start()].strip()
+                    # Extract full marks string
+                    raw_marks = m_match.group(1)
+                    # print(f"DEBUG: Found marks '{raw_marks}' in line '{raw_line}'")
+                    
+                    # Extract just the number for standardization
+                    num_match = re.search(r"(\d+)", raw_marks)
+                    if num_match:
+                         # Force standard [XXM] format
+                         line_marks = f"[{num_match.group(1)}M]"
+                    else:
+                         line_marks = raw_marks
+
+                    # Remove marks from line using explicit replacement
+                    clean_line_text = raw_line.replace(raw_marks, "").strip()
                 
                 # Add prefix
                 if idx == 0:
@@ -647,8 +678,17 @@ def generate_pdf(parsed, meta, path, seed):
                 
                 lines = wrap_text(wrapped_text_input, wrap_width)
                 
+                # Handle case where text is empty (marks only line)
+                if not lines and line_marks:
+                    if y < 100:
+                        c.showPage()
+                        y = H - 50
+                    c.drawRightString(W - margin_x, y, line_marks)
+                    y -= 14
+                    continue
+
                 for line_idx, line in enumerate(lines):
-                    if y < 60:
+                    if y < 100:
                         c.showPage()
                         y = H - 50
                     
@@ -656,25 +696,26 @@ def generate_pdf(parsed, meta, path, seed):
                     
                     # If this is the last line of the paragraph AND we have marks
                     if line_marks and line_idx == len(lines) - 1:
+                        # Reverting manual adjustment, sticking to baseline y
                         c.drawRightString(W - margin_x, y, line_marks)
                     
                     y -= 14
             
-            # Add reduced blank lines for readability (was 25)
-            y -= 25
+            # Add reduced blank lines for readability (was 25, then 15, now 20)
+            y -= 20
 
         # Draw Q1
         draw_question_block(q1, q1_meta, qnum)
 
         # OR
         # y -= 10 # REMOVED PADDING
-        if y < 80:
+        if y < 100:
             c.showPage()
             y = H - 50
             
         c.setFont("Helvetica-Bold", 10)
         c.drawCentredString(W / 2, y, "OR")
-        y -= 15 # Reduced padding after OR (was 25)
+        y -= 20 # Reduced padding after OR (was 25)
 
 
         # Question 2

@@ -1,0 +1,44 @@
+
+/* Generated Papers Grid */
+.papers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.paper-card {
+    background: #1E293B;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+.paper-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: #7C3AED;
+}
+
+.paper-icon {
+    font-size: 32px;
+    margin-bottom: 4px;
+}
+
+.paper-info h4 {
+    color: #F1F5F9;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.paper-info p {
+    color: #94A3B8;
+    font-size: 13px;
+}

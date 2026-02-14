@@ -42,6 +42,11 @@ def add_faculty():
     nature_of_association = request.form.get('nature_of_association')
     password = request.form.get('password')
 
+    email = request.form.get('email')
+    phone = request.form.get('phone')
+    experience = request.form.get('experience')
+    research_interests = request.form.get('research_interests')
+
     file = request.files.get('profile_pdf')
     filename = None
     if file:
@@ -54,10 +59,12 @@ def add_faculty():
         cursor.execute("""
             INSERT INTO faculty
             (faculty_id, name, designation, date_of_joining,
-             qualification, nature_of_association, profile_pdf, password)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+             qualification, nature_of_association, profile_pdf, password,
+             email, phone, experience, research_interests)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """, (faculty_id, name, designation, date_of_joining,
-              qualification, nature_of_association, filename, password))
+              qualification, nature_of_association, filename, password,
+              email, phone, experience, research_interests))
         conn.commit()
         return jsonify({"status": "success", "message": "Faculty added successfully"})
     except mysql.connector.Error as err:
@@ -78,7 +85,8 @@ def get_faculty():
         cursor.execute("""
             SELECT faculty_id, name, designation, 
                    DATE(date_of_joining) AS date_of_joining,
-                   qualification, nature_of_association, profile_pdf, password
+                   qualification, nature_of_association, profile_pdf, password,
+                   email, phone, experience, research_interests
             FROM faculty
             ORDER BY name ASC
         """)
@@ -127,6 +135,11 @@ def update_faculty(faculty_id):
     nature_of_association = request.form.get('nature_of_association')
     password = request.form.get('password')
 
+    email = request.form.get('email')
+    phone = request.form.get('phone')
+    experience = request.form.get('experience')
+    research_interests = request.form.get('research_interests')
+
     file = request.files.get('profile_pdf')
     filename = None
     if file:
@@ -141,19 +154,23 @@ def update_faculty(faculty_id):
                 UPDATE faculty SET
                     name=%s, designation=%s, date_of_joining=%s,
                     qualification=%s, nature_of_association=%s,
-                    password=%s, profile_pdf=%s
+                    password=%s, profile_pdf=%s,
+                    email=%s, phone=%s, experience=%s, research_interests=%s
                 WHERE faculty_id=%s
             """, (name, designation, date_of_joining, qualification,
-                  nature_of_association, password, filename, faculty_id))
+                  nature_of_association, password, filename, 
+                  email, phone, experience, research_interests, faculty_id))
         else:
             cursor.execute("""
                 UPDATE faculty SET
                     name=%s, designation=%s, date_of_joining=%s,
                     qualification=%s, nature_of_association=%s,
-                    password=%s
+                    password=%s,
+                    email=%s, phone=%s, experience=%s, research_interests=%s
                 WHERE faculty_id=%s
             """, (name, designation, date_of_joining, qualification,
-                  nature_of_association, password, faculty_id))
+                  nature_of_association, password, 
+                  email, phone, experience, research_interests, faculty_id))
         conn.commit()
         return jsonify({"status": "success", "message": "Faculty updated successfully"})
     except mysql.connector.Error as err:
@@ -178,6 +195,44 @@ def delete_faculty(faculty_id):
     finally:
         cursor.close()
         conn.close()
+
+# ---------------------------------------------------------
+# LOGIN FACULTY
+# ---------------------------------------------------------
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    if not username or not password:
+        return jsonify({"status": "error", "message": "Missing username or password"}), 400
+
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM faculty WHERE faculty_id=%s AND password=%s", (username, password))
+        faculty = cursor.fetchone()
+
+        if faculty:
+            return jsonify({
+                "status": "success",
+                "message": "Login successful",
+                "user": {
+                    "username": faculty['faculty_id'],
+                    "role": "faculty",
+                    "name": faculty['name']
+                }
+            })
+        else:
+            return jsonify({"status": "error", "message": "Invalid credentials"}), 401
+    except mysql.connector.Error as err:
+        return jsonify({"status": "error", "message": str(err)}), 500
+    finally:
+        if 'cursor' in locals():
+            cursor.close()
+        if 'conn' in locals():
+            conn.close()
 
 # ---------------------------------------------------------
 # RUN APPLICATION

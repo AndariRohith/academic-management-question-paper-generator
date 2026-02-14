@@ -1,0 +1,462 @@
+{
+  "I": [
+    {
+      "text": "a) Define HTML. Write basic tags of HTML .\nb) Develop a webpage to demonstrate Hea ding tags in HTML.  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L1    12M"
+      }
+    },
+    {
+      "text": "Discuss about formatting txt in html with example program.    [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L2    12M"
+      }
+    },
+    {
+      "text": "a) Explain the structure of HTML program.\nb) What are the merits and demerits of html?  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L2    12M"
+      }
+    },
+    {
+      "text": "a) Discuss about forms in html.\nb) Explain about HTML controls with example  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L2    12M"
+      }
+    },
+    {
+      "text": "a) What is <IMG> tag? What are the attributes used with <IMG> tag?\nb) What is <TABLE> tag? What are the attributes that can be use with table\ntag? \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L1    12M"
+      }
+    },
+    {
+      "text": "Design a webpage which shows the information of an organization.    [12M]",
+      "metadata": {
+        "level": "6",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L6    12M"
+      }
+    },
+    {
+      "text": "a) What is Hyperlink? How they are created?\nb) Develop an html program to demonstrate hyperlink.  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L1    12M"
+      }
+    },
+    {
+      "text": "a) What do you mean by FRAME? How these can be created in webpage?\nb) Explain the <FRAME>, <FRAMESET> tags.  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L1    12M"
+      }
+    },
+    {
+      "text": "a) Explain various media tags in HTML5 with examples.\nb) How will you insert an image in a HTML page?   \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "2",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L2    12M"
+      }
+    },
+    {
+      "text": "Define CSS. Analyze  about  working with style sheets.    [12M]",
+      "metadata": {
+        "level": "1",
+        "co": "1",
+        "marks": "12",
+        "raw": "CO1    L1    12M"
+      }
+    }
+  ],
+  "II": [
+    {
+      "text": "a) Explain various conditional operators in JavaScript.\nb) Build a JavaScript application to d emonstrate Arithmetic operators.  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L2    12M"
+      }
+    },
+    {
+      "text": "a) List various features of JavaScript.\nb) Discuss JavaScript Data types with an example program.  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "1",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L1    12M"
+      }
+    },
+    {
+      "text": "a) Distinguish while & do -while in JavaScript with an e xample.\nb) Build a JavaScript code to compare three numbers and to display the\nmaximum number.  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "5",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L5    12M"
+      }
+    },
+    {
+      "text": "Design a web page to demonstrate string objects in JavaScript.    [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L4    12M"
+      }
+    },
+    {
+      "text": "List out  the importance of JavaScript. Ex plain the usage of JavaScript in\nHTML document.    [12M]",
+      "metadata": {
+        "level": "1",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L1    12M"
+      }
+    },
+    {
+      "text": "Choose various conditional statements in JavaScript with an example\nprogram.    [12M]",
+      "metadata": {
+        "level": "6",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L6    12M"
+      }
+    },
+    {
+      "text": "Identify various math  and date  objects in Java Script  and explain wih\nexamples .   [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L3    12M"
+      }
+    },
+    {
+      "text": "a) Explain various comparison operators in JavaScript\nb) Build a JavaScript application to demonstrate Logical operators.  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "2",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L2    12M"
+      }
+    },
+    {
+      "text": "Design a web page to demonstrate array objects in JavaScript.     [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L4    12M"
+      }
+    },
+    {
+      "text": "a) What ar e events? Explain events used in JavaScript.\nb) How object is created in Java Script. Explain  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "1",
+        "co": "2",
+        "marks": "12",
+        "raw": "CO2    L1    12M"
+      }
+    }
+  ],
+  "III": [
+    {
+      "text": "a) Define Cookies. Explain with diagram how cookies work .\nb) Explain di fferent types of cookies along with their classes & method.  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    },
+    {
+      "text": "Discuss various session tracking techniques in detail.    [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "Analyze with steps to handle http request and response.    [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L4    12M"
+      }
+    },
+    {
+      "text": "How will you  read the servlet parameters? Explain the examples.    [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "a) List various interfaces and classes in javax.servlet package.\nb) List various interfaces and classes in javax.servlet.http package.  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    },
+    {
+      "text": "a) What is JSP?\nb) Identify the need of JSP? Explain clearly.  \n  [04M]\n[08M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    },
+    {
+      "text": "Clearly Explain the life cycle of JSP.    [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L2    12M"
+      }
+    },
+    {
+      "text": "Create simple JSP page and explain the steps involved withi in it.    [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L3    12M"
+      }
+    },
+    {
+      "text": "List implicit objects in JSP. Explain clearly.    [12M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    },
+    {
+      "text": "What are the JSP basi c tags? Explain any JSP program using tags.    [12M]",
+      "metadata": {
+        "level": "1",
+        "co": "3",
+        "marks": "12",
+        "raw": "CO3    L1    12M"
+      }
+    }
+  ],
+  "IV": [
+    {
+      "text": "What is PHP? What is variable in PHP? Explain variables in detail.     [12M]",
+      "metadata": {
+        "level": "1",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L1    12M"
+      }
+    },
+    {
+      "text": "a) List and discuss various data types available in PHP.\nb) Explain String of PHP in detail.  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "1",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L1    12M"
+      }
+    },
+    {
+      "text": "Analyze about echo, print & constants in PHP .   [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L4    12M"
+      }
+    },
+    {
+      "text": "Discuss about operators of PHP in detail.    [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L2    12M"
+      }
+    },
+    {
+      "text": "a) How will you define a function in PHP? Explain.\nb) Develop PHP program to illustrate a function.  \n  [05M]\n[07M]",
+      "metadata": {
+        "level": "1",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L1    12M"
+      }
+    },
+    {
+      "text": "Identify the role of  control structures of PHP in detail.    [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L3    12M"
+      }
+    },
+    {
+      "text": "a) What is an array in PHP?\nb) Design a sam ple program to demonstrate array.   \n  [05M]\n[07M]",
+      "metadata": {
+        "level": "1",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L1    12M"
+      }
+    },
+    {
+      "text": "Explain the process of handling a form with example.    [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L3    12M"
+      }
+    },
+    {
+      "text": "Explain the process of handling files of PHP in detail.    [12M]",
+      "metadata": {
+        "level": "5",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L5    12M"
+      }
+    },
+    {
+      "text": "Identify the steps to handle error s and exceptions in PHP?    [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "4",
+        "marks": "12",
+        "raw": "CO4    L3    12M"
+      }
+    }
+  ],
+  "V": [
+    {
+      "text": "a) What is AJAX? Why AJAX is necessary?\nb) Explain XMLHttp of AJAX in detail.  \n  [06M]\n[06M]",
+      "metadata": {
+        "level": "1",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L1    12M"
+      }
+    },
+    {
+      "text": "Briefly e xplain the process of having XML using AJAX.    [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "Discuss ab out requests, responses in AJAX.    [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "Clearly explain with steps to access the database in AJAX?    [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L3    12M"
+      }
+    },
+    {
+      "text": "Explain how do you handle dynamic HTML with AJAX?    [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "Analyze and explain request s handle in AJAX?    [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L4    12M"
+      }
+    },
+    {
+      "text": "Analyze h ow will you access data from the tables stored in database?    [12M]",
+      "metadata": {
+        "level": "4",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L4    12M"
+      }
+    },
+    {
+      "text": "Explain PHP with AJAX in detail using a program.    [12M]",
+      "metadata": {
+        "level": "2",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L2    12M"
+      }
+    },
+    {
+      "text": "Develop an AJAX program that access details from XML and displa y the\nsame.    [12M]",
+      "metadata": {
+        "level": "6",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L6    12M"
+      }
+    },
+    {
+      "text": "Identify  the process of sending data to the server using i) GET ii) POST    [12M]",
+      "metadata": {
+        "level": "3",
+        "co": "5",
+        "marks": "12",
+        "raw": "CO5    L3    12M"
+      }
+    }
+  ]
+}

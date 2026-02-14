@@ -12,11 +12,16 @@ const Faculty = () => {
         date_of_joining: '',
         qualification: '',
         nature_of_association: '',
-        password: ''
+        password: '',
+        email: '',
+        phone: '',
+        experience: '',
+        research_interests: ''
     });
     const [profilePdf, setProfilePdf] = useState(null);
     const [isUpdate, setIsUpdate] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
     const apiUrl = 'http://127.0.0.1:5000';
 
@@ -97,7 +102,11 @@ const Faculty = () => {
             date_of_joining: f.date_of_joining || '',
             qualification: f.qualification || '',
             nature_of_association: f.nature_of_association || '',
-            password: f.password || ''
+            password: f.password || '',
+            email: f.email || '',
+            phone: f.phone || '',
+            experience: f.experience || '',
+            research_interests: f.research_interests || ''
         });
         setProfilePdf(null); // Reset file input
         setIsUpdate(true);
@@ -112,7 +121,11 @@ const Faculty = () => {
             date_of_joining: '',
             qualification: '',
             nature_of_association: '',
-            password: ''
+            password: '',
+            email: '',
+            phone: '',
+            experience: '',
+            research_interests: ''
         });
         setProfilePdf(null);
         setIsUpdate(false);
@@ -187,8 +200,49 @@ const Faculty = () => {
                             <input name="nature_of_association" value={formData.nature_of_association} onChange={handleInputChange} />
                         </div>
                         <div className="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="e.g., faculty@sietk.org" />
+                        </div>
+                        <div className="form-group">
+                            <label>Phone</label>
+                            <input name="phone" value={formData.phone} onChange={handleInputChange} placeholder="e.g., +91-9876543210" />
+                        </div>
+                        <div className="form-group">
+                            <label>Experience</label>
+                            <input name="experience" value={formData.experience} onChange={handleInputChange} placeholder="e.g., 10 Years" />
+                        </div>
+                        <div className="form-group" style={{ gridColumn: '1 / -1' }}>
+                            <label>Research Interests</label>
+                            <input name="research_interests" value={formData.research_interests} onChange={handleInputChange} placeholder="e.g., AI, ML, Data Science (comma separated)" />
+                        </div>
+                        <div className="form-group">
                             <label>Password</label>
-                            <input type="password" name="password" value={formData.password} onChange={handleInputChange} />
+                            <div className="password-input-wrapper" style={{ position: 'relative' }}>
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    name="password"
+                                    value={formData.password}
+                                    onChange={handleInputChange}
+                                    style={{ width: '100%', paddingRight: '40px' }}
+                                />
+                                <button
+                                    type="button"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    style={{
+                                        position: 'absolute',
+                                        right: '10px',
+                                        top: '50%',
+                                        transform: 'translateY(-50%)',
+                                        background: 'none',
+                                        border: 'none',
+                                        color: '#94A3B8',
+                                        cursor: 'pointer',
+                                        fontSize: '16px'
+                                    }}
+                                >
+                                    {showPassword ? '🙈' : '👁️'}
+                                </button>
+                            </div>
                         </div>
                         <div className="form-group">
                             <label>Profile PDF</label>

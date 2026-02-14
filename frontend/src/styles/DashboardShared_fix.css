@@ -1,0 +1,8 @@
+/* Generated Papers Grid - Force Horizontal */
+.papers-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+}

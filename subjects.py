@@ -70,7 +70,7 @@ def get_subjects():
         # NEW: Filtering for Question Bank page
         if regulation and semester:
             cursor.execute("""
-                SELECT subject_id, subject_code, subject_name, semester, regulation_id
+                SELECT subject_id, subject_code, subject_name, semester, regulation_id, faculty_assign
                 FROM subjects
                 WHERE regulation_id = %s AND semester = %s
                 ORDER BY subject_code

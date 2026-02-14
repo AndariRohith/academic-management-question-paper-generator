@@ -42,13 +42,24 @@ const Login = () => {
         }
     };
 
-    const handleFacultyLogin = (e) => {
+    const handleFacultyLogin = async (e) => {
         e.preventDefault();
-        if (facultyUser === facultyCredentials.username && facultyPass === facultyCredentials.password) {
-            login('faculty', facultyUser);
-            navigate('/faculty');
-        } else {
-            setFacultyError('Invalid credentials. Please try again.');
+        try {
+            const res = await fetch('http://127.0.0.1:5000/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: facultyUser, password: facultyPass }),
+            });
+            const data = await res.json();
+
+            if (data.status === 'success') {
+                login('faculty', data.user.username);
+                navigate('/faculty');
+            } else {
+                setFacultyError(data.message || 'Invalid credentials');
+            }
+        } catch (err) {
+            setFacultyError('Server error. Please try again.');
         }
     };
 
